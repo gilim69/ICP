@@ -1,0 +1,51 @@
+.dropbtn {
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    float: right;
+    width: 90px;
+    font-size: small;
+    font-style: normal;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+}
+
+.dropbtn img {
+  height: 30px;
+}
+
+.dropbtn::after {
+    background: rgba(0, 0, 0, 0) url("/images/arrow_down.webp") no-repeat scroll center center;
+    content: "";
+    position: absolute;
+}
+
+.dropdown-content a{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.dropdown-content img {
+  height: 30px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  font-weight: bold;
+  background-color: dodgerblue;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}

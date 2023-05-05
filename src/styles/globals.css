@@ -1,0 +1,11 @@
+@import url('language-select.css');
+@import url('main.css');
+
+body {
+  background: url(/images/puebla-mountain.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover; /* For WebKit*/
+  -moz-background-size: cover;    /* Mozilla*/
+  -o-background-size: cover;      /* Opera*/
+  background-size: cover;         /* Generic*/
+}
+
