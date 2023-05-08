@@ -1,1 +1,4 @@
+rem set NOTION_DATABASE_ID='d707a7985f794f95961971f7d90939f2'
+rem set NOTION_KEY='secret_TMBRvgCicPh93P2XgyNby0E7t0Mu5Ts1yHuR77IuKdy'
+
 yarn dev

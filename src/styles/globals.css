@@ -1,8 +1,20 @@
 @import url('language-select.css');
 @import url('main.css');
+@import url('navbar.css');
+@import url('events.css');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Work Sans', sans-serif;
+}
 
 body {
+  margin-top: 90px;
   background: url(/images/puebla-mountain.jpg) no-repeat center center fixed;
+  background-position-y: 68px;
   -webkit-background-size: cover; /* For WebKit*/
   -moz-background-size: cover;    /* Mozilla*/
   -o-background-size: cover;      /* Opera*/

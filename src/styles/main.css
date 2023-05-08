@@ -1,64 +1,38 @@
-.logo {
-    float: left; 
-    margin-top: 10px; 
-    margin-right: 30px; 
-    line-height: 30px;
-  }
-  
-  @media (max-width: 469px) {
-    .nav-block {display: block;}
-    .title {display: none;}
-  }
+body {
 
-  @media (min-width: 469px) {
-    .nav-block {display: flex;}
-  }
-
-  .nav-block {
-    float: left;
-    width: 80%;
-  }
-  
-  .nav-link {
-    float: left; /*Задаем обтекание*/ 
-    line-height: 30px;/*Высота строки + верт. центрирования текста*/ 
-    font-size: 14px; 
-    color: rgb(39, 7, 114); 
-    margin-top: 10px; 
-    width: 180px; /*Фиксируем ширину блока*/ 
-    margin-right: 10px; 
-    text-align: center; /*Центрируем текст по горизонтали*/
-  }
-  
-  .nav-text {
-    display: inline-block; /* Строчно-блочный элемент */
-    position: relative; /* Относительное позиционирование */
-    font-family: Arial, sans-serif; /* Гарнитура шрифта */
-    font-weight: bold;
-    font-size: large;
-  }
-  
-  .nav-text:hover::after { 
-    content: attr(data-title); /* Выводим текст */
-    position: absolute; /* Абсолютное позиционирование */
-    left: -30%; right: -30%; top: 100%; /* Положение подсказки */
-    z-index: 1; /* Отображаем подсказку поверх других элементов */
-    background: rgba(0,42,167,0.6); /* Полупрозрачный цвет фона */
-    color: #fff; /* Цвет текста */
-    text-align: center; /* Выравнивание текста по центру */
-    font-family: Arial, sans-serif; /* Гарнитура шрифта */
-    font-size: 12px; /* Размер текста подсказки */
-    font-style: italic;
-    font-weight: initial;
-    font-size: small;
-    padding: 5px 10px; /* Поля */
-    border: 1px solid #333; /* Параметры рамки */
-    min-width: 180px;
-   }
-  
+}
 .title {
-    font-size: 36px;
+    margin-top: 0.8em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    font-size: 1.5rem;
     color: indigo;
     text-align: center;
-    margin-top: 10%;
+    width: 68%;
    }
+
+
+   
+.scrolling-text {
+  height: 80%;
+  overflow-block: auto;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+  color: indigo;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.scrolling-text p {
+  margin-top: 1.3em;
+}
+
+.scrolling-text.about {
+  width: 80%;
+}
+
+.error404 {
+  text-align: center;
+  color: darkred;
+  margin-top: 10vh;
+}

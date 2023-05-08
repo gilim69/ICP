@@ -1,0 +1,52 @@
+.events-link {
+    margin-top: 1em;
+    min-height: 188px;
+}
+
+.events-link h2 {
+    margin-left: 1vw;
+}
+.events-link:hover {
+    color: blue;
+}
+
+.events-img {
+    transition: 1s; 
+    float: right;
+    margin-right: 2em;
+    overflow: hidden;
+    object-fit: cover;
+    max-height: 200px;
+    object-position: right;
+    position: relative;
+}
+.event-picture {
+  float: right;
+  margin-right: 4em;
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+
+}
+
+.events-img:hover {
+  transform: scale(1.5);
+}
+
+.events-text {
+    font-style: italic;
+    margin-left: 4vw;
+}
+.events-text p {
+    margin-top: 0.8em;
+}
+.events-text span {
+    font-style: normal;
+    font-weight: bolder;
+}
+
+@media screen and (max-width: 768px) {
+    .events-img {
+        display: none;
+    }
+}

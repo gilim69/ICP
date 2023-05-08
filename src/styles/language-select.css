@@ -1,38 +1,41 @@
 .dropbtn {
     cursor: pointer;
+    float: right;
+    padding-right: 12px;
 }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
-    position: relative;
-    display: inline-block;
-    float: right;
-    width: 90px;
+    width: 120px;
     font-size: small;
     font-style: normal;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.dropdown div {
+  white-space: nowrap;
+  margin: 0;
 }
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     display: none;
     position: absolute;
+    background-color: #f1f1f1;
+    
 }
 
-.dropbtn img {
+.dropdown img {
   height: 30px;
 }
 
-.dropbtn::after {
-    background: rgba(0, 0, 0, 0) url("/images/arrow_down.webp") no-repeat scroll center center;
-    content: "";
-    position: absolute;
-}
+
 
 .dropdown-content a{
   display: flex;
-  align-items: center;
+  align-items: left;
   text-decoration: none;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 .dropdown-content img {
