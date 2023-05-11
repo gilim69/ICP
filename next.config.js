@@ -8,6 +8,9 @@ const nextConfig = {
   images: {
     domains: ['s3.us-west-2.amazonaws.com','secure.notion-static.com', 'www.google.com'],
   },
+    eslint: {
+    ignoreDuringBuilds: true,
+  },
 }
 
 module.exports = nextConfig

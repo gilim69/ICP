@@ -18,68 +18,94 @@ nav{
   align-items: center;
   background-color: #f1f1f1;
   text-align: center;height: 68px;
+  height: 68px;
+ /* border: 2px;
+  border-style: solid;*/
 }
 .logo {
   display: flex;
 }
-.nav__menu-bar{
+.nav-bar{
   display: flex;
   flex-direction: column;
   row-gap: 6px;
   cursor: pointer;
+  margin-right: 12px;
 }
-.nav__menu-bar div{
+.nav-bar div{
   width: 40px;
   height: 4px;
   background-color: black;
   border-radius: 2px;
 }
-.nav__menu-list{
+.nav-list{
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 70px;
-  width: 188px;
+  top: 68px;
+  min-width: 30%;
   row-gap: 24px;
   right: -288px;
   padding: 24px 16px;
   transition: all 0.2s;
   min-height: calc(100vh - 60px);
   background-color: #f1f1f1;
+  text-align: left;
 }
-.nav__menu-list.active{
+.nav-list.dropdown{
   right: 0;
 }
-.nav__link{
+.nav-link{
   font-size: 18px; 
   position: relative;
   transition: all 0.2s;
   text-align: left;
 }
+.nav-list div {
 
-.nav__link:hover{
+}
+
+.nav-list div:hover{
  font-weight: bold;
 }
 
-.center{
-  min-height: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.nav-list :last-child div {
+  font-style: italic;
 }
+
+.nav-item {
+  font-weight: normal;
+  color: black;
+}
+.nav-item.active {
+  font-weight: bold;
+  color:indigo
+}
+
+.userbutton {
+  position: inline;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 @media screen and (min-width: 768px) {
-  .nav__menu-bar{
+  .nav {
+
+  }
+  
+  .nav-bar{
     display: none;
   }
-  .nav__menu-list{
+  .nav-list{
     position: unset;
     flex-direction: row;
     min-height: fit-content;
+    max-height: 68px;
     width: fit-content;
     column-gap: 24px;
-    align-items: center;
+    align-items: left;
   }
-  .nav__link::before{
+  .nav-link::before{
     content: '';
     position: absolute;
     width: 0%;
@@ -90,7 +116,7 @@ nav{
     transition: all 0.2s;
   }
   
-  .nav__link:hover:before{
+  .nav-link:hover:before{
    width: 100%;
   }
 }

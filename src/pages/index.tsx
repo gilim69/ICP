@@ -1,11 +1,11 @@
-import Layout from '../components/layout'
+import Layout from '@/components/layout'
 
 export default function Home() {
   return (
+    <Layout>
     <main
       className={'body'}
     >
-      <Layout />
     
     <h1 className='title'>About the International club Puebla</h1>
     <div className='scrolling-text about'>
@@ -30,5 +30,6 @@ others who share similar interests and values, while also giving back to the com
       </div>
 
     </main>
+    </Layout>
   )
 }

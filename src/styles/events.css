@@ -19,6 +19,8 @@
     max-height: 200px;
     object-position: right;
     position: relative;
+    min-height: 188px;
+    z-index: 0;
 }
 .event-picture {
   float: right;
@@ -31,6 +33,7 @@
 
 .events-img:hover {
   transform: scale(1.5);
+  z-index: 1000;
 }
 
 .events-text {

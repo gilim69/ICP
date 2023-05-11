@@ -1,7 +1,7 @@
 //Events page
 import Link from 'next/link'
 import {useState, useEffect} from "react"
-import Layout from '../../components/layout'
+import Layout from '@/components/layout'
 import Image from 'next/image'
 const { Client } = require('@notionhq/client')
 
@@ -12,35 +12,58 @@ export default function Home({results}) {
   })
 
   const queryDb = () => {
-    let ret = []
-    results.forEach((event) => {
-      ret.push(
-        <div className='events-link'>
-          <Link href={'/events/'+event.id} className='event-link'>
-            <h2>{event.properties.name.title[0].plain_text}</h2>
+    const ret = results.map((e) => {
+        function gP(property) {
+          switch (property) {
+            case 'Id':
+              return e.id
+            case 'Name':
+              return e.properties.name.title[0]? e.properties.name.title[0].plain_text : 'UNDEFINED NAME OF EVENT!'
+            case 'Date':
+              return e.properties.date.date? e.properties.date.date.start : 'Undefined Date!'
+            case 'Time':
+              return e.properties.time.rich_text[0]? e.properties.time.rich_text[0].text.content : 'Undefined Time!'
+            case 'Location':
+              return e.properties.location.rich_text[0]? e.properties.location.rich_text[0].text.content : 'Undefined Location'
+            case 'Status':
+              return e.properties.status.select? e.properties.status.select.name : 'Undefined'
+            case 'Description':
+              return e.properties.description.rich_text[0]? e.properties.description.rich_text[0].text.content : 'About the event...'
+            case 'Imgsrc':
+              return e.properties.photo.files[0]? e.properties.photo.files[0].file.url : '/no_image.jpg'
+          }
+        }
+        return (
+        <div key={gP('Id')} className='events-link'>
+          <Link href={'/events/'+gP('Id')} className='event-link'>
+            <h2>{gP('Name')}</h2>
             <div className='events-img'>
                 <Image
-                      src={event.properties.photo.files[0].file.url}
-                      alt={event.properties.name.title[0].plain_text}
+                      src={gP('Imgsrc')}
+                      alt={gP('Name')}
                       className="event-picture"
-                      width={200}
+                      width={254}
                       height={180}
                 />
             </div>
             <div className='events-text'>
-              <p><span>Date:</span> {event.properties.date.date.start}</p>
-              <p><span>Time:</span> {event.properties.time.rich_text[0].text.content}</p>
-              <p><span>Location:</span> {event.properties.location.rich_text[0].text.content}</p>
-              <p><span>Status:</span> {event.properties.status.select.name}</p>
-              <p><span>Description:</span> {event.properties.description.rich_text[0].text.content}</p>       
+              <p><span>Date:</span> {gP('Date')}</p>
+              <p><span>Time:</span> {gP('Time')}</p>
+              <p><span>Location:</span> {gP('Location')}</p>
+              <p><span>Status:</span> {gP('Status')}</p>
+              <p><span>Description:</span> {gP('Description')}</p>       
             </div>
           </Link>
         </div>
-      )
-    })
-    return ret
+        )
+  })
+    return <div> {ret} </div>
   }
-  return <div>  <Layout/> {queryDb()}</div>
+  return <>  
+            <Layout>
+              {queryDb()}
+            </Layout>
+          </>
 }
 
 export async function getStaticProps() {
@@ -57,10 +80,9 @@ export async function getStaticProps() {
   });
   return {
     props: {
-      results: response.results,
+      results: response.results
       }
   }
 }
-
 
 
