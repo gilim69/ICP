@@ -21,7 +21,9 @@ body {
   margin-right: auto;
   text-align: justify;
   color: indigo;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.331);
+  padding: 1rem;
+  border-radius: 5px;
 }
 .scrolling-text p {
   margin-top: 1.3em;

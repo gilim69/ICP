@@ -1,9 +1,10 @@
 //Events page
 import Link from 'next/link'
-import {useState, useEffect} from "react"
+import { useEffect } from 'react'
 import Layout from '@/components/layout'
 import Image from 'next/image'
 const { Client } = require('@notionhq/client')
+import EventRecord from '@/components/eventrecord'
 
 export default function Home({results}) {
 
@@ -11,8 +12,8 @@ export default function Home({results}) {
     console.log(results)
   })
 
-  const queryDb = () => {
-    const ret = results.map((e) => {
+/*  const queryDb = () => {
+      const ret = results.map((e) => {
         function gP(property) {
           switch (property) {
             case 'Id':
@@ -58,12 +59,18 @@ export default function Home({results}) {
         )
   })
     return <div> {ret} </div>
-  }
-  return <>  
-            <Layout>
-              {queryDb()}
-            </Layout>
-          </>
+  }*/
+  return (
+    <>  
+      <Layout>  
+        <div className='event-list'>
+          {results.map((eventData) => (
+            <EventRecord eventRec={eventData} />
+          ))}
+        </div>
+      </Layout>
+    </>
+  )
 }
 
 export async function getStaticProps() {

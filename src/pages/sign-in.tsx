@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Layout from '@/components/layout'
-import SignInSide from '@/components/signIncomp'
+import SignInSide from '@/components/signINcomp'
 
 export default function Signin() {
   return (

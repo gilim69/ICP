@@ -41,3 +41,5 @@ qdb.js
 *.cmd
 
 /temp
+
+/public/images/photo

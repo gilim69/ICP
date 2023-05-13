@@ -1,55 +1,101 @@
-.events-link {
-    margin-top: 1em;
-    min-height: 188px;
+.event-list {
+    margin: 1vh auto;
+    width: 80%;
+    min-width: 280px;
+    border: 0px;
+    border-style: solid;
+    border-radius: 8px;
+    background-color: rgba(240, 255, 255, 0.68);
+    padding: 3px;
 }
-
-.events-link h2 {
-    margin-left: 1vw;
+.event-header {
+    margin-top: 8vh;
+    display: flex;
 }
-.events-link:hover {
-    color: blue;
+.event-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: indigo;
+    text-align: center;
+    width: 100%;
 }
-
-.events-img {
-    transition: 1s; 
+.event-status {
     float: right;
-    margin-right: 2em;
-    overflow: hidden;
-    object-fit: cover;
-    max-height: 200px;
-    object-position: right;
-    position: relative;
-    min-height: 188px;
-    z-index: 0;
+    background-color: rgb(46, 239, 7);
+    border-radius: 8px;
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 2px 8px;
+    font-weight: bold;
+    margin: auto 8px;
 }
-.event-picture {
-  float: right;
-  margin-right: 4em;
-  display: block;
-  max-width: 100%;
-  margin: 0 auto;
-
-}
-
-.events-img:hover {
-  transform: scale(1.5);
-  z-index: 1000;
-}
-
-.events-text {
+.event-status div {
     font-style: italic;
-    margin-left: 4vw;
 }
-.events-text p {
-    margin-top: 0.8em;
+.event-status.Canceled {
+    background-color: red;
 }
-.events-text span {
-    font-style: normal;
-    font-weight: bolder;
+.event-status.Finished {
+    background-color: blueviolet;
+}
+.event-status.Undefined {
+    background-color: grey;
+    color: white;
 }
 
-@media screen and (max-width: 768px) {
-    .events-img {
-        display: none;
+.event-record {
+    flex-wrap: wrap;
+    border: inherit;
+    border-radius: 8px;
+    border-color: green;
+    margin: 0.5rem;
+    background-color: rgba(128, 255, 255, 0.1);
+    overflow: auto;
+}
+.event-record:hover {
+    background-color: rgba(165, 219, 241, 0.785);
+}
+
+.event-imgblock {
+    object-fit: cover;
+    overflow: hidden;
+    border: inherit;
+    border-color: red;
+    margin: 0 auto 1vh auto;
+}
+.event-imgdiv {
+    display: flex;
+    margin: 0 auto 0 auto;
+    width: 300px;
+}
+.event-chgbtn {
+    display: none;
+}
+.event-imgdiv:hover .event-chgbtn {
+    display: block;
+    position: absolute;
+}
+
+.event-element {
+    margin: 3vh 3vw;
+    min-width: 280;
+}
+.event-head {
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-left: royalblue;
+    margin: auto 0.5rem;
+}
+.event-value {
+    font-size: 1rem;
+    margin: auto 0.5rem;
+    text-align: justify;
+}
+
+
+@media screen and (min-width: 768px) {
+    .event-imgblock {
+        float: right;
+        margin: 0 0 1vh 3vw;
     }
 }

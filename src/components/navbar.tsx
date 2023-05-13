@@ -1,18 +1,11 @@
-import fs from 'fs'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import { useState, useEffect } from 'react'
-import { UserButton } from "@clerk/nextjs"
-import { useAuth } from '@clerk/nextjs'
-
-const userId = ''
+import { useState } from 'react'
 
 const Navbar = () => { 
   const [activeList, setActiveList] = useState(false)
   const router = useRouter();
-
-  const user = useAuth()
 
   const MENU_LIST = [
     { text: 'About', href: '/' },
@@ -57,14 +50,7 @@ const Navbar = () => {
         </div>
         <div className={`${activeList ? 'dropdown' : ''} nav-list`} 
               onClick = {() => setActiveList(false)}>
-          {MENU_LIST.map((menu) => ( <NavItem {...menu} />  )
-          )}
-          
-
-          <div className='userbutton'>
-            <UserButton />
-          </div>
-
+          {MENU_LIST.map((menu) => ( <NavItem {...menu} />  ))}
         </div>
           
         <div className="dropdown" onClick = {() => setActiveList(false)}>
