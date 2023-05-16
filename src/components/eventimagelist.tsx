@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState } from 'react'
+import { useState, useRef , useLayoutEffect} from 'react'
 //import Box from '@mui/material/Box'
 //import ImageList from '@mui/material/ImageList'
 //import ImageListItem from '@mui/material/ImageListItem'
@@ -9,8 +9,15 @@ export default function EventImageList(props) {
     const Img = props.ImageArray
     const L = Img.length - 1
     const [indImg, setIndImg] = useState(0)
-    const [width, setWidth] = useState(300)
-    const [height, setHeight] = useState(213)
+    const [width, setWidth] = useState(600)
+    const [height, setHeight] = useState(~~600/1.41)
+    const ref: any = useState()
+
+    useLayoutEffect(() => {
+        setWidth(ref.current.offsetWidth)
+        setHeight(ref.current.offsetHeight)
+      }, []);
+      
 
     const changePhoto = (d) => {
         if (L) {
@@ -27,8 +34,9 @@ export default function EventImageList(props) {
     const setSize = (img) => {
         let w = img.naturalWidth
         let h = img.naturalHeight
-        h = Math.round(h*300/w)
-        w = 300
+        const W = width
+        h = Math.round(h*W/w)
+        w = W
         setWidth(w)
         setHeight(h)
     }
@@ -48,14 +56,14 @@ export default function EventImageList(props) {
                 ))}
             </ImageList>
         </Box> */
-                <div className='event-imgdiv' onClick={()=>changePhoto(1)}>
+                <div className='event-imgdiv' onClick={()=>changePhoto(1)} ref={ref}>
                     <Image
                         src={Img[indImg].file.url}
                         width={width}
                         height={height}
                         alt=''
-                        onLoadingComplete={(img) => setSize(img)}
-                        
+                        quality='1'
+                        onLoadingComplete={(img) => setSize(img)}    
                     />
                     <div className='event-chgbtn'>
                         <img src={ L? '/images/back.png' : '' } 

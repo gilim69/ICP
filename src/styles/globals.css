@@ -21,3 +21,35 @@ body {
   background-size: cover;         /* Generic*/
 }
 
+.button-group {
+  width: 48%;
+  max-width: 280px;
+  margin: 1vh auto 1vh auto;
+  display: flex;
+  gap: 12px;
+}
+.button {
+  border: 0px;
+  border-style: ridge;
+  border-radius: 8px;
+  border-color: indigo;
+  box-shadow: 0px 1px 3px;
+  font-size: 1rem;
+  font-weight: normal;
+  padding: 0.5rem;
+  margin: auto;
+  background-color: ghostwhite;
+  -webkit-transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 0.5);
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 0.5);
+}
+.button:hover {
+  font-weight: bold;
+  -webkit-transform: translate(10px);
+  transform: translate(8px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  cursor: pointer; 
+}
+
+.button.red {
+  background-color: red;
+}

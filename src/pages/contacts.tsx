@@ -4,15 +4,16 @@ import Layout from '@/components/layout'
 export default function Contacts() {
   return (
     <Layout>
-      <main>
-        <h1>Contacts</h1>
-        <p>Contact information of International Club Puebla:</p>
-        <ul>
-          <li><b>Email:</b> info@internationalclubpuebla.com</li>
-          <li><b>Phone:</b> +52 222 123 4567</li>
-          <li><b>Address:</b> Av. 123, Colonia Centro, Puebla, México</li>
-        </ul>
-      </main>
+      <div className='event-list'>
+        <h1 className='event-title'>Contacts</h1>
+        <div className='event-record'><b>Contact information of International Club Puebla:</b></div>
+          <div className='event-head'>Email:</div>
+            <div className='event-record'> info@internationalclubpuebla.com</div>
+          <div className='event-head'>Phone:</div>
+            <div className='event-record'> +52 222 123 4567</div>
+          <div className='event-head'>Address:</div> 
+            <div className='event-record'>Av. 123, Colonia Centro, Puebla, México</div>
+      </div>
     </Layout>
   )
 }

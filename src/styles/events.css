@@ -1,6 +1,6 @@
 .event-list {
-    margin: 1vh auto;
-    width: 80%;
+    margin: 1vh 1vw 0 1vw;
+    width: 100%;
     min-width: 280px;
     border: 0px;
     border-style: solid;
@@ -61,12 +61,14 @@
     overflow: hidden;
     border: inherit;
     border-color: red;
-    margin: 0 auto 1vh auto;
+    margin: 0 3vw 1vh 3vw;
+    width: 90%;
 }
 .event-imgdiv {
     display: flex;
     margin: 0 auto 0 auto;
-    width: 300px;
+    width: 100%;
+    border: inherit;
 }
 .event-chgbtn {
     display: none;
@@ -92,10 +94,23 @@
     text-align: justify;
 }
 
+.event-map {
+    object-fit: cover;
+    overflow: hidden;
+    border: inherit;
+    border-color: red;
+    margin: 0 auto 1vh auto;
+}
 
 @media screen and (min-width: 768px) {
+    .event-list {
+        margin: 1vh auto;
+        width: 80%;
+    }
     .event-imgblock {
         float: right;
-        margin: 0 0 1vh 3vw;
+        margin: 3px 3px 1vh 3vw;
+        width: 40%;
+        max-width: 489;
     }
 }

@@ -22,14 +22,21 @@
     "autoprefixer": "10.4.14",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.4",
-    "mui": "^0.0.1",
+    "firebase": "^9.22.0",
+    "js-cookie": "^3.0.5",
     "nestjs-notion": "^0.2.1",
     "next": "13.3.4",
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-firebaseui": "^6.0.0",
+    "react-hook-form": "^7.43.9",
     "styled-components": "^6.0.0-rc.1",
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/gilim69/icp.git",
+  "author": "gilim69 <gilim69@gmail.com>",
+  "license": "MIT"
 }

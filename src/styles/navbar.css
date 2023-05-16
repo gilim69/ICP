@@ -56,7 +56,8 @@ nav{
   right: 0;
 }
 .nav-list div {
-
+  border: 0px;
+  border-style: solid;
 }
 
 .nav-list div:hover{
@@ -68,21 +69,17 @@ nav{
 }
 
 .nav-item {
+  display: flex;
   font-weight: normal;
   font-size: 18px; 
   position: relative;
   transition: all 0.2s;
   color: black;
+  vertical-align: middle;
 }
 .nav-item.active {
   font-weight: bold;
   color:indigo
-}
-
-.userbutton {
-  position: inline;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
 
 @media screen and (min-width: 870px) {  
