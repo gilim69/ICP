@@ -5,7 +5,7 @@
     border: 0px;
     border-style: solid;
     border-radius: 8px;
-    background-color: rgba(240, 255, 255, 0.68);
+
     padding: 3px;
 }
 .event-header {
@@ -15,24 +15,26 @@
 .event-title {
     font-size: 1.5rem;
     font-weight: bold;
-    color: indigo;
     text-align: center;
     width: 100%;
 }
 .event-status {
     float: right;
-    background-color: rgb(46, 239, 7);
     border-radius: 8px;
+    border-style: solid;
+    border: 1px;
+    border-color: black;
     font-size: 0.8rem;
     text-align: center;
     padding: 2px 8px;
     font-weight: bold;
     margin: auto 8px;
+    background-color: lightgrey;
 }
 .event-status div {
     font-style: italic;
 }
-.event-status.Canceled {
+/*.event-status.Canceled {
     background-color: red;
 }
 .event-status.Finished {
@@ -41,7 +43,7 @@
 .event-status.Undefined {
     background-color: grey;
     color: white;
-}
+}*/
 
 .event-record {
     flex-wrap: wrap;
@@ -49,11 +51,10 @@
     border-radius: 8px;
     border-color: green;
     margin: 0.5rem;
-    background-color: rgba(128, 255, 255, 0.1);
     overflow: auto;
 }
 .event-record:hover {
-    background-color: rgba(165, 219, 241, 0.785);
+
 }
 
 .event-imgblock {

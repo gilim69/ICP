@@ -16,9 +16,9 @@ nav{
   padding: 8px;
   justify-content: space-between;
   align-items: center;
-  background-color: #f1f1f1;
   text-align: center;height: 68px;
   height: 68px;
+  background-color: white;
  /* border: 2px;
   border-style: solid;*/
 }
@@ -49,8 +49,13 @@ nav{
   padding: 24px 16px;
   transition: all 0.2s;
   min-height: calc(100vh - 60px);
-  background-color: #f1f1f1;
   text-align: left;
+  background-color: white;
+  border: 0px;
+  border-left: 2px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 8px;
 }
 .nav-list.dropdown{
   right: 0;
@@ -64,10 +69,6 @@ nav{
  font-weight: bold;
 }
 
-.nav-list :last-child div {
-  font-style: italic;
-}
-
 .nav-item {
   display: flex;
   font-weight: normal;
@@ -79,7 +80,6 @@ nav{
 }
 .nav-item.active {
   font-weight: bold;
-  color:indigo
 }
 
 @media screen and (min-width: 870px) {  
@@ -94,6 +94,7 @@ nav{
     width: fit-content;
     column-gap: 24px;
     align-items: left;
+    border-left: 0px;
   }
   .nav-link::before{
     content: '';

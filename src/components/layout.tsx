@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import Navbar from '@/components/navbar'
+import React from 'react'
+import { UserProvider } from '@auth0/nextjs-auth0/client'
 
 export default function Layout(props) {
     return (
