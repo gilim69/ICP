@@ -6,8 +6,8 @@ import Dialog from '@mui/material/Dialog'
 import DialogActions from '@mui/material/DialogActions'
 import DialogContent from '@mui/material/DialogContent'
 import DialogContentText from '@mui/material/DialogContentText'
-import LoginIcon from '@mui/icons-material/Login';
-import Stack from '@mui/material/Stack';
+import LoginIcon from '@mui/icons-material/Login'
+import Tooltip from '@mui/material/Tooltip'
 
 import DialogTitle from '@mui/material/DialogTitle'
 import { useUser } from '@auth0/nextjs-auth0/client'
@@ -17,7 +17,6 @@ export default function Profile() {
   const { user, error, isLoading } = useUser()
   const [ open, setOpen ] = useState(false)
   const router = useRouter()
-    console.log(user, error)
   const handleClickOpen = () => {
     setOpen(true)
   }
@@ -31,13 +30,22 @@ export default function Profile() {
 
   if (isLoading) return <div>Loading...</div>
   if (error) return <div>Error: {error.message}</div>
-  if (!user) return <div><a href="/api/auth/login"><LoginIcon/></a></div>
+  if (!user) return (
+      <div>
+        <a href="/api/auth/login">
+          <Tooltip title='Login'>
+            <LoginIcon/>
+          </Tooltip>
+        </a>
+      </div>)
   const email: string = user.email as string
   const picture: string = user.picture as string
     return (
         <>
         <div onClick={()=>handleClickOpen()}>
+          <Tooltip title='Logout'>
             <Avatar alt={email} src={picture} />
+          </Tooltip>
         </div>
             <Dialog open={open} onClose={handleClose}>
                 <DialogTitle>Do you want to logout?</DialogTitle>

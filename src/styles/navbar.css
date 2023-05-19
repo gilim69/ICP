@@ -2,12 +2,12 @@ a{
   text-decoration: none;
   color: inherit;
 }
-nav-header {
+.nav-header {
   position: fixed;
   z-index: 30;
   top: 0;
 }
-nav{
+.nav {
   position: fixed;
   z-index: 30;
   top: 0;
@@ -19,18 +19,19 @@ nav{
   text-align: center;height: 68px;
   height: 68px;
   background-color: white;
- /* border: 2px;
-  border-style: solid;*/
 }
 .logo {
   display: flex;
+  width: auto;
 }
 .nav-bar{
   display: flex;
+  float: right;
   flex-direction: column;
   row-gap: 6px;
   cursor: pointer;
   margin-right: 12px;
+  margin-left: auto;
 }
 .nav-bar div{
   width: 40px;
@@ -41,9 +42,10 @@ nav{
 .nav-list{
   display: flex;
   flex-direction: column;
+  float: right;
   position: fixed;
   top: 68px;
-  min-width: 30%;
+  min-width: 190px;
   row-gap: 24px;
   right: -288px;
   padding: 24px 16px;
@@ -65,7 +67,7 @@ nav{
   border-style: solid;
 }
 
-.nav-list div:hover{
+.nav-item:hover{
  font-weight: bold;
 }
 
@@ -81,8 +83,11 @@ nav{
 .nav-item.active {
   font-weight: bold;
 }
+.home .nav-item {
+  color: red;
+}
 
-@media screen and (min-width: 870px) {  
+@media screen and (min-width: 730px) {  
   .nav-bar{
     display: none;
   }

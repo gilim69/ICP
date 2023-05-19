@@ -5,8 +5,11 @@ import Layout from '@/components/layout'
 import Image from 'next/image'
 const { Client } = require('@notionhq/client')
 import EventRecord from '@/components/eventrecord'
+import Button from '@mui/material/Button';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import EventNoteIcon from '@mui/icons-material/EventNote';
 
-export default function Home({results}) {
+export default function Home({results}, view) {
 
   useEffect(()=>{
     console.log(results)
@@ -63,6 +66,15 @@ export default function Home({results}) {
   return (
     <>  
       <Layout>  
+          <div className='title'>
+          <Link href='/events?view="dayGridMonth"'>
+            <Button variant="text" startIcon={<CalendarMonthIcon/>}>Events in Calendar</Button>
+          </Link>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <Link href='/events?view="listWeek"'>
+            <Button variant="text" startIcon={<EventNoteIcon/>}>Events by list</Button>
+          </Link>
+        </div>
         <div className='event-list'>
           {results.map((eventData) => (
             <EventRecord eventRec={eventData} />
@@ -75,7 +87,7 @@ export default function Home({results}) {
 
 export async function getStaticProps() {
   const notion = new Client({ auth: process.env.NOTION_KEY})
-  const databaseId = process.env.NOTION_DATABASE_ID
+  const databaseId = process.env.NOTION_DB_EVENTS_ID
   const response = await notion.databases.query({
     database_id: databaseId,
     sorts: [

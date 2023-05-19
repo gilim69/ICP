@@ -12,6 +12,11 @@
     "@auth0/nextjs-auth0": "^2.6.0",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
+    "@fullcalendar/core": "^6.1.7",
+    "@fullcalendar/daygrid": "^6.1.7",
+    "@fullcalendar/interaction": "^6.1.7",
+    "@fullcalendar/list": "^6.1.7",
+    "@fullcalendar/react": "^6.1.7",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.12.3",
     "@mui/styled-engine-sc": "^5.12.0",
@@ -32,7 +37,8 @@
     "remove": "^0.1.5",
     "styled-components": "^6.0.0-rc.1",
     "tailwindcss": "3.3.2",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "vercel": "^29.3.4"
   },
   "main": "index.js",
   "repository": "https://github.com/gilim69/icp.git",

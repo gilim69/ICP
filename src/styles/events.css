@@ -5,7 +5,6 @@
     border: 0px;
     border-style: solid;
     border-radius: 8px;
-
     padding: 3px;
 }
 .event-header {
@@ -22,14 +21,11 @@
     float: right;
     border-radius: 8px;
     border-style: solid;
-    border: 1px;
-    border-color: black;
     font-size: 0.8rem;
     text-align: center;
     padding: 2px 8px;
     font-weight: bold;
     margin: auto 8px;
-    background-color: lightgrey;
 }
 .event-status div {
     font-style: italic;

@@ -5,28 +5,28 @@ import { useState } from 'react'
 import { useUser } from '@auth0/nextjs-auth0/client'
 import Profile from '@/components/profile'
 
-import HomeTwoToneIcon from '@mui/icons-material/HomeTwoTone'
-import DateRangeTwoToneIcon from '@mui/icons-material/DateRangeTwoTone'
-import AutoAwesomeMotionTwoToneIcon from '@mui/icons-material/AutoAwesomeMotionTwoTone';
-import ContactsTwoToneIcon from '@mui/icons-material/ContactsTwoTone'
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined'
+import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
+import PermMediaOutlinedIcon from '@mui/icons-material/PermMediaOutlined';
+import ContactPhoneOutlinedIcon from '@mui/icons-material/ContactPhoneOutlined';
 
 const Navbar = () => { 
   const [activeList, setActiveList] = useState(false)
   const router = useRouter()
   const { user } = useUser()
-  console.log('USS-', user)
+  console.log('USER-', user)
 
   const MENU_LIST = [
-    { text: 'Home', href: '/', icon: <HomeTwoToneIcon/> },
-    { text: 'Events', href: '/events', icon: <DateRangeTwoToneIcon/> },
-    { text: 'Photo&Video', href: '/photo', icon: <AutoAwesomeMotionTwoToneIcon/> },
-    { text: 'Contacts', href: '/contacts',  icon: <ContactsTwoToneIcon/>},
+    { text: 'Home', href: '/', icon: <HomeOutlinedIcon/> },
+    { text: 'Events', href: '/calendar', icon: <CalendarMonthOutlinedIcon/> },
+    { text: 'Photo&Video', href: '/media', icon: <PermMediaOutlinedIcon/> },
+    { text: 'Contacts', href: '/contacts',  icon: <ContactPhoneOutlinedIcon/>},
   ]
 
   const NavItem = ({ text, href, icon }) => {
     return (
       <Link href={href} key={text}>
-        <div className={`${(router.pathname===href) ? ' active' : ''} nav-item`}>
+        <div className={`${(router.pathname===href) ? ' active' : ''} nav-item `+ text.toLowerCase()}>
           {icon}&nbsp;<div>{text}</div>
         </div>
       </Link>
@@ -42,8 +42,8 @@ const Navbar = () => {
                   src="/logo.jpg"
                   alt="International club Puebla"
                   className="logo-picture"
-                  width={89}
-                  height={89}
+                  width={68}
+                  height={68}
                   priority
               />
           </div>
@@ -65,11 +65,11 @@ const Navbar = () => {
 
 
         <div className="dropdown" onClick = {() => setActiveList(false)}>
-          <div className="dropbtn"><img src="/images/US.png" alt="US"/></div>
+          <div className="dropbtn">En</div>
           <div className="dropdown-content">
-            <Link href="#us"><img src="/images/US.png" alt="US"/>&nbsp; USA</Link>
-            <Link href="#mx"><img src="/images/MX.png" alt="MX"/>&nbsp; Mexicano</Link>
-            <Link href="#ru"><img src="/images/RU.png" alt="RU"/>&nbsp; Русский</Link>
+            <Link href="#us">English</Link>
+            <Link href="#mx">Español</Link>
+            <Link href="#ru">Русский</Link>
           </div>
         </div>
 

@@ -13,6 +13,7 @@ export default function Layout(props) {
             <meta name='language' content={props.language} />
             <meta name='viewport' content='width=device-width, initial-scale=1.0' />
             <meta charSet='utf-8' />
+            <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.5/index.global.min.js'></script>
         </Head>
         <Navbar />
         {props.children}
