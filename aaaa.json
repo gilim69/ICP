@@ -1,0 +1,608 @@
+{
+    "blogHead": {
+        "object": "page",
+        "id": "39207be0-cbe4-47b8-bdd4-1c19dde4f5f3",
+        "created_time": "2023-05-19T09:56:00.000Z",
+        "last_edited_time": "2023-05-22T03:52:00.000Z",
+        "created_by": {
+            "object": "user",
+            "id": "af4fe56e-2968-4e51-9ad4-31dfaa7ff7b8"
+        },
+        "last_edited_by": {
+            "object": "user",
+            "id": "af4fe56e-2968-4e51-9ad4-31dfaa7ff7b8"
+        },
+        "cover": {
+            "type": "external",
+            "external": {
+                "url": "https://www.notion.so/images/page-cover/rijksmuseum_avercamp_1608.jpg"
+            }
+        },
+        "icon": {
+            "type": "emoji",
+            "emoji": "🤠"
+        },
+        "parent": {
+            "type": "database_id",
+            "database_id": "6cc15d8c-3ce5-4e88-8c2c-2dc1f2f6ef79"
+        },
+        "archived": false,
+        "properties": {
+            "Language": {
+                "id": "LH%3Dh",
+                "type": "select",
+                "select": {
+                    "id": "AXOH",
+                    "name": "English",
+                    "color": "pink"
+                }
+            },
+            "Date": {
+                "id": "i%40SV",
+                "type": "date",
+                "date": {
+                    "start": "2028-05-31",
+                    "end": null,
+                    "time_zone": null
+                }
+            },
+            "Published": {
+                "id": "kAwA",
+                "type": "checkbox",
+                "checkbox": true
+            },
+            "NoMoreInfo": {
+                "id": "owrB",
+                "type": "checkbox",
+                "checkbox": false
+            },
+            "Description": {
+                "id": "yvNc",
+                "type": "rich_text",
+                "rich_text": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "The ",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "The ",
+                        "href": null
+                    },
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "International Club of Puebla",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": true,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "International Club of Puebla",
+                        "href": null
+                    },
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": " is a community of internationally-minded people in ",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": " is a community of internationally-minded people in ",
+                        "href": null
+                    },
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "Puebla, Mexico",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": true,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "Puebla, Mexico",
+                        "href": null
+                    },
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": ". The club provides a platform for cultural exchange, socializing, and networking.\nFounded in [insert year], the club has grown to become a significant part of the international community in Puebla. Members of the club come from different countries, including the United States, Canada, France, Germany, Japan, and many more.",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": ". The club provides a platform for cultural exchange, socializing, and networking.\nFounded in [insert year], the club has grown to become a significant part of the international community in Puebla. Members of the club come from different countries, including the United States, Canada, France, Germany, Japan, and many more.",
+                        "href": null
+                    }
+                ]
+            },
+            "Authors": {
+                "id": "%7B%40GB",
+                "type": "people",
+                "people": [
+                    {
+                        "object": "user",
+                        "id": "4a3ea87b-b436-409f-8454-712060607ea8",
+                        "name": "adelina.mard@gmail.com",
+                        "avatar_url": null,
+                        "type": "person",
+                        "person": {
+                            "email": "adelina.mard@gmail.com"
+                        }
+                    }
+                ]
+            },
+            "Title": {
+                "id": "title",
+                "type": "title",
+                "title": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "About ICP",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "About ICP",
+                        "href": null
+                    }
+                ]
+            }
+        },
+        "url": "https://www.notion.so/About-ICP-39207be0cbe447b8bdd41c19dde4f5f3"
+    },
+    "blogChildren": [
+        {
+            "object": "block",
+            "id": "bfb68a28-807e-4846-9aa3-572b2dcef01f",
+            "parent": {
+                "type": "page_id",
+                "page_id": "39207be0-cbe4-47b8-bdd4-1c19dde4f5f3"
+            },
+            "created_time": "2023-05-20T05:56:00.000Z",
+            "last_edited_time": "2023-05-20T05:56:00.000Z",
+            "created_by": {
+                "object": "user",
+                "id": "af4fe56e-2968-4e51-9ad4-31dfaa7ff7b8"
+            },
+            "last_edited_by": {
+                "object": "user",
+                "id": "af4fe56e-2968-4e51-9ad4-31dfaa7ff7b8"
+            },
+            "has_children": false,
+            "archived": false,
+            "type": "heading_1",
+            "heading_1": {
+                "rich_text": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "About International Club of Puebla",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "About International Club of Puebla",
+                        "href": null
+                    }
+                ],
+                "is_toggleable": false,
+                "color": "default"
+            }
+        },
+        {
+            "object": "block",
+            "id": "c18baf80-89eb-4af2-8407-4d8611a36680",
+            "parent": {
+                "type": "page_id",
+                "page_id": "39207be0-cbe4-47b8-bdd4-1c19dde4f5f3"
+            },
+            "created_time": "2023-05-20T05:56:00.000Z",
+            "last_edited_time": "2023-05-20T07:06:00.000Z",
+            "created_by": {
+                "object": "user",
+                "id": "af4fe56e-2968-4e51-9ad4-31dfaa7ff7b8"
+            },
+            "last_edited_by": {
+                "object": "user",
+                "id": "af4fe56e-2968-4e51-9ad4-31dfaa7ff7b8"
+            },
+            "has_children": false,
+            "archived": false,
+            "type": "paragraph",
+            "paragraph": {
+                "rich_text": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "The ",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "The ",
+                        "href": null
+                    },
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "International Club of Puebla",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": true,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "International Club of Puebla",
+                        "href": null
+                    },
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": " is a community of internationally-minded people in ",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": " is a community of internationally-minded people in ",
+                        "href": null
+                    },
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "Puebla, Mexico",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": true,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "Puebla, Mexico",
+                        "href": null
+                    },
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": ". The club provides a platform for cultural exchange, socializing, and networking.",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": ". The club provides a platform for cultural exchange, socializing, and networking.",
+                        "href": null
+                    }
+                ],
+                "color": "default"
+            }
+        },
+        {
+            "object": "block",
+            "id": "43e40c5c-143e-4e54-89db-310cbd20fdc1",
+            "parent": {
+                "type": "page_id",
+                "page_id": "39207be0-cbe4-47b8-bdd4-1c19dde4f5f3"
+            },
+            "created_time": "2023-05-20T05:56:00.000Z",
+            "last_edited_time": "2023-05-20T05:56:00.000Z",
+            "created_by": {
+                "object": "user",
+                "id": "af4fe56e-2968-4e51-9ad4-31dfaa7ff7b8"
+            },
+            "last_edited_by": {
+                "object": "user",
+                "id": "af4fe56e-2968-4e51-9ad4-31dfaa7ff7b8"
+            },
+            "has_children": false,
+            "archived": false,
+            "type": "paragraph",
+            "paragraph": {
+                "rich_text": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "Founded in [insert year], the club has grown to become a significant part of the international community in Puebla. Members of the club come from different countries, including the United States, Canada, France, Germany, Japan, and many more.",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "Founded in [insert year], the club has grown to become a significant part of the international community in Puebla. Members of the club come from different countries, including the United States, Canada, France, Germany, Japan, and many more.",
+                        "href": null
+                    }
+                ],
+                "color": "default"
+            }
+        },
+        {
+            "object": "block",
+            "id": "84af7d78-5818-4401-ad87-ad90f65a4e3e",
+            "parent": {
+                "type": "page_id",
+                "page_id": "39207be0-cbe4-47b8-bdd4-1c19dde4f5f3"
+            },
+            "created_time": "2023-05-20T05:56:00.000Z",
+            "last_edited_time": "2023-05-20T05:56:00.000Z",
+            "created_by": {
+                "object": "user",
+                "id": "af4fe56e-2968-4e51-9ad4-31dfaa7ff7b8"
+            },
+            "last_edited_by": {
+                "object": "user",
+                "id": "af4fe56e-2968-4e51-9ad4-31dfaa7ff7b8"
+            },
+            "has_children": false,
+            "archived": false,
+            "type": "paragraph",
+            "paragraph": {
+                "rich_text": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "The International Club of Puebla organizes various events throughout the year, such as cultural festivals, language exchange programs, and social gatherings. These events provide an opportunity for members to learn about different cultures, make new friends, and have fun.",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "The International Club of Puebla organizes various events throughout the year, such as cultural festivals, language exchange programs, and social gatherings. These events provide an opportunity for members to learn about different cultures, make new friends, and have fun.",
+                        "href": null
+                    }
+                ],
+                "color": "default"
+            }
+        },
+        {
+            "object": "block",
+            "id": "082314e2-f4e9-456a-add6-4a608d4b030e",
+            "parent": {
+                "type": "page_id",
+                "page_id": "39207be0-cbe4-47b8-bdd4-1c19dde4f5f3"
+            },
+            "created_time": "2023-05-20T05:56:00.000Z",
+            "last_edited_time": "2023-05-20T05:56:00.000Z",
+            "created_by": {
+                "object": "user",
+                "id": "af4fe56e-2968-4e51-9ad4-31dfaa7ff7b8"
+            },
+            "last_edited_by": {
+                "object": "user",
+                "id": "af4fe56e-2968-4e51-9ad4-31dfaa7ff7b8"
+            },
+            "has_children": false,
+            "archived": false,
+            "type": "paragraph",
+            "paragraph": {
+                "rich_text": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "One of the club's most significant events is the International Food Festival, which takes place every year. Members of the club share their traditional dishes and cuisines, creating a unique culinary experience for everyone.",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "One of the club's most significant events is the International Food Festival, which takes place every year. Members of the club share their traditional dishes and cuisines, creating a unique culinary experience for everyone.",
+                        "href": null
+                    }
+                ],
+                "color": "default"
+            }
+        },
+        {
+            "object": "block",
+            "id": "b2a173ee-5d8a-4065-a679-d05b0d3e6147",
+            "parent": {
+                "type": "page_id",
+                "page_id": "39207be0-cbe4-47b8-bdd4-1c19dde4f5f3"
+            },
+            "created_time": "2023-05-20T05:56:00.000Z",
+            "last_edited_time": "2023-05-20T05:56:00.000Z",
+            "created_by": {
+                "object": "user",
+                "id": "af4fe56e-2968-4e51-9ad4-31dfaa7ff7b8"
+            },
+            "last_edited_by": {
+                "object": "user",
+                "id": "af4fe56e-2968-4e51-9ad4-31dfaa7ff7b8"
+            },
+            "has_children": false,
+            "archived": false,
+            "type": "paragraph",
+            "paragraph": {
+                "rich_text": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "The International Club of Puebla also supports various charitable causes. The club has organized fundraising events to support local charities, including orphanages and animal shelters.",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "The International Club of Puebla also supports various charitable causes. The club has organized fundraising events to support local charities, including orphanages and animal shelters.",
+                        "href": null
+                    }
+                ],
+                "color": "default"
+            }
+        },
+        {
+            "object": "block",
+            "id": "a2f40fbd-2881-400f-a3b6-41fa6dc5f2d6",
+            "parent": {
+                "type": "page_id",
+                "page_id": "39207be0-cbe4-47b8-bdd4-1c19dde4f5f3"
+            },
+            "created_time": "2023-05-20T05:56:00.000Z",
+            "last_edited_time": "2023-05-20T05:56:00.000Z",
+            "created_by": {
+                "object": "user",
+                "id": "af4fe56e-2968-4e51-9ad4-31dfaa7ff7b8"
+            },
+            "last_edited_by": {
+                "object": "user",
+                "id": "af4fe56e-2968-4e51-9ad4-31dfaa7ff7b8"
+            },
+            "has_children": false,
+            "archived": false,
+            "type": "paragraph",
+            "paragraph": {
+                "rich_text": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "If you are an internationally-minded person living in Puebla, the International Club of Puebla is an excellent platform to connect with like-minded individuals, learn about different cultures, and make new friends.",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "If you are an internationally-minded person living in Puebla, the International Club of Puebla is an excellent platform to connect with like-minded individuals, learn about different cultures, and make new friends.",
+                        "href": null
+                    }
+                ],
+                "color": "default"
+            }
+        },
+        {
+            "object": "block",
+            "id": "5e16c969-2d5f-47fd-8fa6-c8df731c5d65",
+            "parent": {
+                "type": "page_id",
+                "page_id": "39207be0-cbe4-47b8-bdd4-1c19dde4f5f3"
+            },
+            "created_time": "2023-05-20T05:56:00.000Z",
+            "last_edited_time": "2023-05-20T05:56:00.000Z",
+            "created_by": {
+                "object": "user",
+                "id": "af4fe56e-2968-4e51-9ad4-31dfaa7ff7b8"
+            },
+            "last_edited_by": {
+                "object": "user",
+                "id": "af4fe56e-2968-4e51-9ad4-31dfaa7ff7b8"
+            },
+            "has_children": false,
+            "archived": false,
+            "type": "paragraph",
+            "paragraph": {
+                "rich_text": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "Join the International Club of Puebla today and be a part of this vibrant community.",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "Join the International Club of Puebla today and be a part of this vibrant community.",
+                        "href": null
+                    }
+                ],
+                "color": "default"
+            }
+        }
+    ],
+    "pageID": "39207be0-cbe4-47b8-bdd4-1c19dde4f5f3"
+}

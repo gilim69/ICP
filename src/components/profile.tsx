@@ -41,10 +41,10 @@ export default function Profile() {
   const email: string = user.email as string
   const picture: string = user.picture as string
     return (
-        <>
+      <>
         <div onClick={()=>handleClickOpen()}>
           <Tooltip title='Logout'>
-            <Avatar alt={email} src={picture} />
+            <Avatar alt={email} src={picture} sx={{ width: 28, height: 28 }}/>
           </Tooltip>
         </div>
             <Dialog open={open} onClose={handleClose}>
@@ -55,8 +55,8 @@ export default function Profile() {
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={() => handleClose(0)}>No</Button>
-                    <Button onClick={() => handleClose(1)}>Yes</Button>
+                    <Button onClick={() => handleClose(0)} key='but1'>No</Button>
+                    <Button onClick={() => handleClose(1)} key='but2'>Yes</Button>
                 </DialogActions>
             </Dialog>
         </>

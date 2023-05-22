@@ -1,12 +1,10 @@
 import * as React from 'react'
 import { useState, useRef , useLayoutEffect} from 'react'
 //import Box from '@mui/material/Box'
-//import ImageList from '@mui/material/ImageList'
-//import ImageListItem from '@mui/material/ImageListItem'
 import Image from 'next/image'
 
 export default function EventImageList(props) {
-    const Img = props.ImageArray
+    const Img = typeof(props.ImageArray)==='string'? new Array(props.ImageArray) : props.ImageArray
     const L = Img.length - 1
     const [indImg, setIndImg] = useState(0)
     const [width, setWidth] = useState(600)
@@ -58,7 +56,7 @@ export default function EventImageList(props) {
         </Box> */
                 <div className='event-imgdiv' onClick={()=>changePhoto(1)} ref={ref}>
                     <Image
-                        src={Img[indImg].file.url}
+                        src={Img[indImg]}
                         width={width}
                         height={height}
                         alt=''

@@ -10,6 +10,7 @@
 .event-header {
     margin-top: 8vh;
     display: flex;
+    position: sticky;
 }
 .event-title {
     font-size: 1.5rem;
@@ -25,7 +26,7 @@
     text-align: center;
     padding: 2px 8px;
     font-weight: bold;
-    margin: auto 8px;
+    margin: auto 8px 2px 2px;
 }
 .event-status div {
     font-style: italic;

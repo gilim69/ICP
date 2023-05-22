@@ -4,7 +4,6 @@ import { useEffect } from 'react'
 import Layout from '@/components/layout'
 import Image from 'next/image'
 const { Client } = require('@notionhq/client')
-import EventRecord from '@/components/eventrecord'
 import Box from '@mui/material/Box'
 import ImageList from '@mui/material/ImageList'
 import ImageListItem from '@mui/material/ImageListItem'
@@ -19,7 +18,7 @@ export default function Home({results}) {
 
   return (
     <>  
-      <Layout>  
+
         <Box sx={{ width: 500, height: 450, overflowY: 'scroll' }}>
           <ImageList variant="masonry" cols={3} gap={8}>
             {imgList.map((item) => (
@@ -36,13 +35,13 @@ export default function Home({results}) {
               ))}
           </ImageList>
         </Box>
-      </Layout>
+
     </>
   )
 }
 
 export async function getStaticProps() {
-  const notion = new Client({ auth: process.env.NOTION_KEY1})
+  const notion = new Client({ auth: process.env.NOTION_KEY})
   const databaseId = process.env.NOTION_DB_PHOTOS_ID
   const response = await notion.databases.query({
     database_id: databaseId,

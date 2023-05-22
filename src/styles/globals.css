@@ -2,6 +2,7 @@
 @import url('main.css');
 @import url('navbar.css');
 @import url('events.css');
+@import url('post.css');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap');
 * {
   margin: 0;

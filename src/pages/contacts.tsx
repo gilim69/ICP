@@ -3,7 +3,7 @@ import Layout from '@/components/layout'
 
 export default function Contacts() {
   return (
-    <Layout>
+
       <div className='event-list'>
         <h1 className='event-title'>Contacts</h1>
         <div className='event-record'><b>Contact information of International Club Puebla:</b></div>
@@ -14,6 +14,6 @@ export default function Contacts() {
           <div className='event-head'>Address:</div> 
             <div className='event-record'>Av. 123, Colonia Centro, Puebla, México</div>
       </div>
-    </Layout>
+
   )
 }
