@@ -1,17 +1,17 @@
 
 .post-list {
-    width: 80%;
+    width: 90%;
     margin: 3vh auto 3vh auto;
     justify-content: center;
   }
   
-  .post-list-item {
+.post-list-item {
     max-width: 680px;
-    width: 90%;
+    width: 96%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 8vh;
-  }
+}
 
 .post-title {
     font-size: 3rem;

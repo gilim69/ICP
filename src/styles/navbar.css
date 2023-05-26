@@ -1,34 +1,49 @@
 
+:root {
+  --bord: none;
+}
+a {
+  text-decoration: none;
+}
+
 .nav-header {
   position: fixed;
   z-index: 30;
   top: 0;
+  width: 100%;
+  display: inline-block;
+  background-color: white;
+  background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, white 60%);
+  border: var(--bord);
+}
+.logo {
+  float: left;
+  border: var(--bord);
+}
+
+.logo img {
+  display: flex;
+  width: auto;
+  border: var(--bord);
 }
 .nav {
-  position: fixed;
-  z-index: 30;
-  top: 0;
-  width: 100%;
-  display: flex;
+  position: relative;
+  display: block;
   padding: 8px;
   justify-content: space-between;
   align-items: center;
-  text-align: center;height: 68px;
   height: 68px;
-  background-color: white;
-}
-.logo {
-  display: flex;
-  width: auto;
+  float: right;
+  border: var(--bord);
 }
 .nav-bar{
   display: flex;
-  float: right;
+  float: left;
   flex-direction: column;
   row-gap: 6px;
   cursor: pointer;
-  margin-right: 12px;
-  margin-left: auto;
+  margin: 24px 12px 0 auto;
+
 }
 .nav-bar div{
   width: 40px;
@@ -39,7 +54,7 @@
 .nav-list{
   display: flex;
   flex-direction: column;
-  float: right;
+  float: left;
   position: fixed;
   top: 68px;
   min-width: 190px;
@@ -48,7 +63,7 @@
   padding: 24px 16px;
   transition: all 0.2s;
   min-height: calc(100vh - 60px);
-  text-align: left;
+  text-align: left; 
   background-color: white;
   border: 0px;
   border-left: 2px;
@@ -60,8 +75,7 @@
   right: 0;
 }
 .nav-list div {
-  border: 0px;
-  border-style: solid;
+  border: var(--bord);
 }
 
 .nav-item:hover{
@@ -71,18 +85,47 @@
 .nav-item {
   display: flex;
   font-weight: normal;
-  font-size: 18px; 
+  font-size: 1rem; 
   position: relative;
   transition: all 0.2s;
   color: black;
   vertical-align: middle;
+  margin-left: 8px;
+  border: var(--bord);
 }
 .nav-item.active {
   font-weight: bold;
 }
-.home .nav-item {
-  color: red;
+
+.nav-item a {
+  text-decoration: none;
 }
+
+.nav-end {
+  display: inline;
+  border: var(--bord);
+  float: right;
+  padding: 24px 12px 0 12px;
+}
+
+.whatsapp-link {
+  display: block;
+  border: var(--bord);
+  margin-top: 8vh;
+}
+.whatsapp-div {
+  display: none;
+  position: absolute;
+  background-color: white;
+  padding: 8px;
+  right: 0px;
+  border: 1px solid;
+  border-radius: 8px;
+}
+.whatsapp-link:hover .whatsapp-div {
+  display: block;
+}
+
 
 @media screen and (min-width: 730px) {  
   .nav-bar{
@@ -108,8 +151,7 @@
     background-color: black;
     transition: all 0.2s;
   }
-  
-  .nav-link:hover:before{
+  .nav-link:hover::before{
    width: 100%;
   }
 }

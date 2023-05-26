@@ -2,6 +2,8 @@ import * as React from 'react'
 import { useState, useRef , useLayoutEffect} from 'react'
 //import Box from '@mui/material/Box'
 import Image from 'next/image'
+import Icon from '@mdi/react';
+import { mdiArrowLeftBoldBoxOutline, mdiArrowRightBoldBoxOutline } from '@mdi/js';
 
 export default function EventImageList(props) {
     const Img = typeof(props.ImageArray)==='string'? new Array(props.ImageArray) : props.ImageArray
@@ -9,13 +11,16 @@ export default function EventImageList(props) {
     const [indImg, setIndImg] = useState(0)
     const [width, setWidth] = useState(600)
     const [height, setHeight] = useState(~~600/1.41)
-    const ref: any = useState()
+    const ref: any = useRef()
 
     useLayoutEffect(() => {
-        setWidth(ref.current.offsetWidth)
-        setHeight(ref.current.offsetHeight)
+        const w = ref.current.offsetWidth || 600
+        const h = ref.current.offsetHeight || ~~w/1.41
+        setWidth(w)
+        setHeight(h)
       }, []);
       
+    setTimeout(()=>changePhoto(1), 8000)
 
     const changePhoto = (d) => {
         if (L) {
@@ -30,8 +35,8 @@ export default function EventImageList(props) {
     }
 
     const setSize = (img) => {
-        let w = img.naturalWidth
-        let h = img.naturalHeight
+        let w = img.naturalWidth || ~~600
+        let h = img.naturalHeight || ~~w/1.41
         const W = width
         h = Math.round(h*W/w)
         w = W
@@ -40,20 +45,6 @@ export default function EventImageList(props) {
     }
 
     return (
-/*        <Box xs={4} sx={{ height: 200, overflowY: 'scroll' }}>
-            <ImageList variant="masonry" cols={1} gap={8}>
-                {Img.map((item) => (
-                    <ImageListItem key={i++}>
-                        <img
-                            src={`${item.file.url}?w=248&fit=crop&auto=format`}
-                            srcSet={`${item.file.url}?w=248&fit=crop&auto=format&dpr=2 2x`} 
-                            alt={item.name} 
-                            loading="lazy"
-                        />
-                    </ImageListItem>
-                ))}
-            </ImageList>
-        </Box> */
                 <div className='event-imgdiv' onClick={()=>changePhoto(1)} ref={ref}>
                     <Image
                         src={Img[indImg]}
@@ -63,12 +54,16 @@ export default function EventImageList(props) {
                         quality='1'
                         onLoadingComplete={(img) => setSize(img)}    
                     />
+                    {L?
                     <div className='event-chgbtn'>
-                        <img src={ L? '/images/back.png' : '' } 
-                            onClick={()=>changePhoto(-1)} />
-                        <img src={ L? '/images/forward.png' : '' } 
-                            onClick={()=>changePhoto(1)} />
+                        <div onClick={()=>changePhoto(-1)}>
+                            <Icon path={mdiArrowLeftBoldBoxOutline} size={2} />
+                        </div>
+                        <div onClick={()=>changePhoto(1)}>
+                            <Icon path={mdiArrowRightBoldBoxOutline} size={2}/>
+                        </div>
                     </div>
+                    : ''}
                 </div>
     )
 }

@@ -1,22 +1,30 @@
-.event-list {
-    margin: 1vh 1vw 0 1vw;
-    width: 100%;
-    min-width: 280px;
-    border: 0px;
-    border-style: solid;
+.event-record {
+    flex-wrap: wrap;
+    border: inherit;
     border-radius: 8px;
-    padding: 3px;
+    border-color: black;
+    border-left: 3px;
+    margin: 0.5rem 3vw 0.5rem 3vw;
+    overflow: auto;
 }
+@media screen and (min-width: 730px) {
+    .event-record {
+        width: 80%;
+        margin: 0.5rem auto 0.5rem auto;
+    }
+}
+
 .event-header {
     margin-top: 8vh;
     display: flex;
     position: sticky;
 }
 .event-title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     text-align: center;
     width: 100%;
+    margin: 0 0 1.2rem auto;
 }
 .event-status {
     float: right;
@@ -26,7 +34,8 @@
     text-align: center;
     padding: 2px 8px;
     font-weight: bold;
-    margin: auto 8px 2px 2px;
+    height: fit-content;
+    margin: 0 8px 2px 2px;
 }
 .event-status div {
     font-style: italic;
@@ -42,31 +51,22 @@
     color: white;
 }*/
 
-.event-record {
-    flex-wrap: wrap;
-    border: inherit;
-    border-radius: 8px;
-    border-color: green;
-    margin: 0.5rem;
-    overflow: auto;
-}
-.event-record:hover {
-
-}
-
 .event-imgblock {
     object-fit: cover;
     overflow: hidden;
     border: inherit;
     border-color: red;
-    margin: 0 3vw 1vh 3vw;
+    margin: 0 auto 1vh auto;
     width: 90%;
 }
 .event-imgdiv {
     display: flex;
     margin: 0 auto 0 auto;
     width: 100%;
+    min-width: 300px;
+    min-height: 213px;
     border: inherit;
+    align-content: center;
 }
 .event-chgbtn {
     display: none;
@@ -88,7 +88,7 @@
 }
 .event-value {
     font-size: 1rem;
-    margin: auto 0.5rem;
+    margin: auto 0.5rem 1rem;
     text-align: justify;
 }
 
@@ -100,15 +100,91 @@
     margin: 0 auto 1vh auto;
 }
 
+/* Calendar block */
+.event-calendar {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+:root {
+    --fc-small-font-size: .8em;
+    --fc-page-bg-color: white;
+    --fc-neutral-bg-color: rgba(208, 208, 208, 0.3);
+    --fc-neutral-text-color: #808080;
+    --fc-border-color: #ddd;
+  
+    --fc-button-text-color: #000000;
+    --fc-button-bg-color: grey;
+    --fc-button-border-color: grey;
+    --fc-button-hover-bg-color: lightgrey;
+    --fc-button-hover-border-color: grey;
+    --fc-button-active-bg-color: silver;
+    --fc-button-active-border-color: black;
+  
+    --fc-event-bg-color:#ffffff;
+    --fc-event-border-color: #ffffff;
+    --fc-event-text-color: #000000;
+    --fc-event-selected-overlay-color: rgba(0, 0, 0, 0.25);
+  
+    --fc-more-link-bg-color: #d0d0d0;
+    --fc-more-link-text-color: black;
+  
+    --fc-event-resizer-thickness: 8px;
+    --fc-event-resizer-dot-total-width: 8px;
+    --fc-event-resizer-dot-border-width: 1px;
+  
+    --fc-non-business-color: rgba(215, 215, 215, 0.3);
+    --fc-bg-event-color: rgb(143, 223, 130);
+    --fc-bg-event-opacity: 0.3;
+    --fc-highlight-color: rgba(188, 232, 241, 0.3);
+    --fc-today-bg-color:  aliceblue;
+    --fc-now-indicator-color: red;
+  
+    --fc-daygrid-event-dot-width: 8px;
+  
+    --fc-list-event-dot-width: 10px;
+    --fc-list-event-hover-bg-color: #f5f5f5;
+  }
+  
+.fc-icon {
+    color: white;
+}
+.fc-direction-ltr {
+    width: 100%;
+    min-width: 310px;
+}
+.fc-event-title {
+    cursor: pointer;
+    font-weight: bold;
+}
+.fc-event-title:hover {
+    border-color: #000000;
+}
+.fc-view-harness {
+    margin: 0, 10px, 0, 10px;
+}
+.fc-button {
+    margin-left: 8px;
+}
+.fc-list-table  {
+    width: 100%;
+    margin: 0%;
+  }
+
 @media screen and (min-width: 768px) {
-    .event-list {
-        margin: 1vh auto;
-        width: 80%;
-    }
     .event-imgblock {
         float: right;
         margin: 3px 3px 1vh 3vw;
         width: 40%;
         max-width: 489;
+    }
+    .event-calendar {
+        width: 80%;
+        margin-left: auto;
+        margin-right: 1vw;
+    }
+    .fc-event-title {
+        white-space: pre-wrap;
     }
 }

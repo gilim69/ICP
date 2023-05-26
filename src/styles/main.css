@@ -1,33 +1,11 @@
-body {
 
-}
-.title {
-    margin-top: 0.8em;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    font-size: 1.5rem;
-    text-align: center;
-    width: 68%;
-   }
-
-
-   
-.scrolling-text {
-  height: 80%;
-  overflow-block: auto;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: justify;
-  padding: 1rem;
-  border-radius: 5px;
-}
-.scrolling-text p {
-  margin-top: 1.3em;
-}
-
-.scrolling-text.about {
-  width: 80%;
+.first-title {
+  text-align: center;
+  margin: 10% auto 200px auto;
+  font-size: 10vh;
+  word-wrap: break-word;
+  color: gold;
+  text-shadow:black 1px 3px 3px;
 }
 
 .error404 {

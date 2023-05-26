@@ -1,13 +1,13 @@
 //Events page
-import Link from 'next/link'
+import React from 'react'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import Layout from '@/components/layout'
+import Link from 'next/link'
 import Image from 'next/image'
+import Layout from '@/components/layout'
 const { Client } = require('@notionhq/client')
 import EventNoteIcon from '@mui/icons-material/EventNote';
 
-import React from 'react'
 import FullCalendar from '@fullcalendar/react' // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 import interactionPlugin from "@fullcalendar/interaction"
@@ -29,70 +29,37 @@ if (param.view==='listMonth') {
     const ret = {
       id: e.id,
       title: e.properties.name.title[0]? e.properties.name.title[0].plain_text : 'UNDEFINED NAME OF EVENT!',
-      start: e.properties.date.date? e.properties.date.date.start : 'Undefined Date!'};
+      start: e.properties.date.date? e.properties.date.date.start : 'Undefined Date!',
+      url: '/events/'+e.id
+    }
     return ret 
   }
 
   const events = results.map((e) => ev(e))
 
-  const handleEventClick=(clickInfo) => {
-    const getMapUrl = (m)=> {
-      if (m) {
-          const start = m.indexOf('https://')
-          if (start+1) {
-              const end = m.indexOf('" ')
-                  return end? m.slice(start, end) : null
-              }
-          }
-      return null
-    }
-
-    const getImgArray = (e: any) => {
-      let ret: any[] = []
-      let i = 0
-      while (e.properties.photo.files[i]) {
-        ret.push(e.properties.photo.files[i++].file.url)
-      }
-      return ret
-    }
-
-    const id = clickInfo.event.id
-    const e = results.find((ev)=>ev.id===id)
-    if (!e) { return }
-    const props = {
-      Id: e.id,
-      Name: e.properties.name.title[0]? e.properties.name.title[0].plain_text : 'UNDEFINED NAME OF EVENT!',
-      Date: e.properties.date.date? e.properties.date.date.start : 'Undefined Date!',
-      Time: e.properties.time.rich_text[0]? e.properties.time.rich_text[0].text.content : 'Undefined Time!',
-      Location: e.properties.location.rich_text[0]? e.properties.location.rich_text[0].text.content : 'Undefined Location',
-      Status: e.properties.status.select? e.properties.status.select.name : 'Undefined',
-      Description: e.properties.description.rich_text[0]? e.properties.description.rich_text[0].text.content : 'About the event...',
-      Img: getImgArray(e),
-      MapUrl: getMapUrl(e.properties.map.url), 
-      View: clickInfo.view.type
-    }
- //   console.log('Props Calendar:', props)
-    const idPath = '/events/event_'+id
-    router.push(
-      { 
-        pathname: idPath, 
-        query:  props  
-      })
+  function eventToolTip(info){
+    
   }
 
   return (
     <>  
-
-      <div>
+      <div className='event-calendar'>
         <FullCalendar 
           plugins={[ dayGridPlugin, listPlugin, interactionPlugin]}    
           initialView={view}
-          weekends={false}
-          displayEventTime={true}
+          weekends={true}
+          displayEventTime={false}
           events={events}
+          height='auto'
+          fixedWeekCount={false}
+          showNonCurrentDates={false}
+          expandRows={true}
+          handleWindowResize={true}
+          stickyHeaderDates={true}
+          eventMouseEnter={eventToolTip}
           headerToolbar={
-            {left: 'title,prev,next',
-            center: '',
+            {left: 'prev,next',
+            center: 'title',
             right: 'dayGridWeek,dayGridMonth,listMonth'}
           }
           views={{
@@ -101,10 +68,9 @@ if (param.view==='listMonth') {
             listMonth: { buttonText: 'Events by list' },
           }}
           selectable={true}
-          eventClick={handleEventClick}
+ //         eventClick={handleEventClick}
         />
       </div>
-
     </>
   )
 }
@@ -114,17 +80,20 @@ export async function getStaticProps() {
   const databaseId = process.env.NOTION_DB_EVENTS_ID
   const response = await notion.databases.query({
     database_id: databaseId,
-    sorts: [
-      {
-        property: 'date',
-        direction: 'ascending',
-      }
-    ],
+    filter: {
+      or: [
+        {
+          property: 'language',
+          select: { equals: 'English', },
+        }
+      ],
+    },
   });
   return {
     props: {
       results: response.results
-      }
+      },
+      revalidate: 60
   }
 }
 

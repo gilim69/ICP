@@ -13,13 +13,14 @@ export default function PostCard({p}) {
       <Card sx={{ maxWidth: 680 }}>
         {p.img?
           <CardMedia
-            sx={{ height: 140 }}
+            sx={{ height: 210 }}
             image={p.img}
             title={p.title}
           />
         : ''}
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
+            {p.icon}
             {p.title}
           </Typography>
           

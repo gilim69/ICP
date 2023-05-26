@@ -1,11 +1,13 @@
 import Layout from '@/components/layout'
+import BlockHTML from '@/components/blockhtml'
+import PageHTML from '@/components/pagehtml'
 import Link from 'next/link'
 import Image from 'next/image'
 import LoginIcon from '@mui/icons-material/Login';
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 const { Client } = require('@notionhq/client')
-import { getBlock, getIcon, getPageData } from '@/pages/api/getdata'
+import { getIcon, getCover } from '@/pages/api/getdata'
 
 
 import Button from '@mui/material/Button'
@@ -19,35 +21,32 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 export default function Home(props) {
   useEffect(()=>{
       console.log('POST DATA:', props)
-      console.log(head)
     })
     const router = useRouter()
 
     const head = {
       icon: getIcon(props.blogHead),
-      img: props.blogHead.cover? props.blogHead.cover.external.url : null,
+      img: getCover(props.blogHead),
       title: props.blogHead.properties.Title.title[0]? props.blogHead.properties.Title.title[0].plain_text : 'UNDEFINED TITLE OF POST!'
     }
-   
-    const postBody = props.blogChildren.map(e => getBlock(e))
 
     return (
       <div className='post-list-item'>
       <Card sx={{ maxWidth: 680 }}>
         {head.img?
           <CardMedia
-            sx={{ height: 140 }}
+            sx={{ height: 210 }}
             image={head.img}
             title={head.title}
           />
         : ''}
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h4" component="div">
             {head.icon}
             {head.title}
           </Typography>
 
-            {postBody}
+          <PageHTML pg={props.blogChildren}/>
 
         </CardContent>
 
@@ -60,7 +59,22 @@ export default function Home(props) {
 }
 
 export async function getStaticProps({params}) {
-return getPageData(params.post_id)
+  const pageId = params.post_id
+  const notion = new Client({ auth: process.env.NOTION_KEY })
+  const responseHead = await notion.pages.retrieve({ page_id: pageId });
+  const responseChildren = await notion.blocks.children.list({
+    block_id: pageId,
+    page_size: 50,
+  });
+
+  return {
+    props: {
+      blogHead: responseHead,
+      blogChildren: responseChildren.results,
+      pageID: pageId
+    },
+    revalidate: 60
+  }
 }
 
 
@@ -94,7 +108,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false
+    fallback: 'blocking'
   }
 }
 
