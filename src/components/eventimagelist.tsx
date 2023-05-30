@@ -20,7 +20,7 @@ export default function EventImageList(props) {
         setHeight(h)
       }, []);
       
-    setTimeout(()=>changePhoto(1), 8000)
+    setTimeout(()=>changePhoto(1), 12000)
 
     const changePhoto = (d) => {
         if (L) {
@@ -54,14 +54,15 @@ export default function EventImageList(props) {
                         quality='1'
                         onLoadingComplete={(img) => setSize(img)}    
                     />
+
                     {L?
                     <div className='event-chgbtn'>
-                        <div onClick={()=>changePhoto(-1)}>
+                        <span onClick={()=>changePhoto(-1)}>
                             <Icon path={mdiArrowLeftBoldBoxOutline} size={2} />
-                        </div>
-                        <div onClick={()=>changePhoto(1)}>
+                        </span>
+                        <span onClick={()=>changePhoto(1)}>
                             <Icon path={mdiArrowRightBoldBoxOutline} size={2}/>
-                        </div>
+                        </span>
                     </div>
                     : ''}
                 </div>

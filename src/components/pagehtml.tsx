@@ -1,12 +1,12 @@
-import BlockHTML from '@/components/blockhtml'
+import BlockHTML from './BlockHTML'
 
-export default function PageHTML({pg}) {
-   // console.log('PageHTML', pg)
-    const pType = pg.type? pg.type : 'no_type'
+export default function PageHTML({pageContent}) {
+//    console.log('PageHTML', pageContent)
+    const pType = pageContent?.type ?? 'no_type'
     return (
-        pg.map((e, i) => {return(
-        <div key={'page'+i} className={'page-'+pType}>
-            <BlockHTML bl={e}/>
+        pageContent?.map((e, i) => {return(
+        <div key={'page'+i} className='page'>
+            <BlockHTML blockData={e}/>
         </div>    
         )})
     )    

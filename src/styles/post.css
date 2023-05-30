@@ -3,6 +3,11 @@
     width: 90%;
     margin: 3vh auto 3vh auto;
     justify-content: center;
+<<<<<<< HEAD
+=======
+    background: none;
+    color: black;
+>>>>>>> 92377ee (Black theme)
   }
   
 .post-list-item {
@@ -11,6 +16,10 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 8vh;
+<<<<<<< HEAD
+=======
+    background: none;
+>>>>>>> 92377ee (Black theme)
 }
 
 .post-title {

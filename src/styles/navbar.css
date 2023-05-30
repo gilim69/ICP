@@ -7,6 +7,7 @@ a {
 }
 
 .nav-header {
+<<<<<<< HEAD
   position: fixed;
   z-index: 30;
   top: 0;
@@ -14,6 +15,17 @@ a {
   display: inline-block;
   background-color: white;
   background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, white 60%);
+=======
+  position: sticky;
+  z-index: 30;
+  top: 0;
+  width: 100%;
+  height: 69px;
+  margin-bottom: 110px;
+  display: inline-block;
+  background: none;
+/*  background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, white 60%);*/
+>>>>>>> 92377ee (Black theme)
   border: var(--bord);
 }
 .logo {
@@ -35,6 +47,10 @@ a {
   height: 68px;
   float: right;
   border: var(--bord);
+<<<<<<< HEAD
+=======
+  background: none;
+>>>>>>> 92377ee (Black theme)
 }
 .nav-bar{
   display: flex;
@@ -48,7 +64,11 @@ a {
 .nav-bar div{
   width: 40px;
   height: 4px;
+<<<<<<< HEAD
   background-color: black;
+=======
+  background-color: goldenrod;
+>>>>>>> 92377ee (Black theme)
   border-radius: 2px;
 }
 .nav-list{
@@ -64,10 +84,17 @@ a {
   transition: all 0.2s;
   min-height: calc(100vh - 60px);
   text-align: left; 
+<<<<<<< HEAD
   background-color: white;
   border: 0px;
   border-left: 2px;
   border-color: black;
+=======
+  background: black;
+  border: 0px;
+  border-left: 2px;
+  border-color: goldenrod;
+>>>>>>> 92377ee (Black theme)
   border-style: solid;
   border-radius: 8px;
 }
@@ -112,11 +139,20 @@ a {
   display: block;
   border: var(--bord);
   margin-top: 8vh;
+<<<<<<< HEAD
+=======
+  background: none;
+>>>>>>> 92377ee (Black theme)
 }
 .whatsapp-div {
   display: none;
   position: absolute;
+<<<<<<< HEAD
   background-color: white;
+=======
+  background: goldenrod;
+  color: black;
+>>>>>>> 92377ee (Black theme)
   padding: 8px;
   right: 0px;
   border: 1px solid;
@@ -140,6 +176,10 @@ a {
     column-gap: 24px;
     align-items: left;
     border-left: 0px;
+<<<<<<< HEAD
+=======
+    background: none;
+>>>>>>> 92377ee (Black theme)
   }
   .nav-link::before{
     content: '';

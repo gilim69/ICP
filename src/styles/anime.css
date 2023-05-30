@@ -1,5 +1,6 @@
 .bg-animation {
     animation: bg-animation 25s ease-in-out infinite;
+<<<<<<< HEAD
     background-image: url(/puebla2.jpg); /* Фоновая картинка */
     background-repeat: no-repeat;
     background-origin: border-box;
@@ -12,6 +13,26 @@
     z-index: -1;
 }
  
+=======
+    background-image: url(/puebla1.jpg); /* Фоновая картинка */
+    background-repeat: no-repeat;
+    background-origin: border-box;
+ /*   backdrop-filter: blur(5px); */
+    border: 2px solid;
+    width: 100%;
+    height: 120%;
+    min-height: 200px;
+    position: fixed;
+    top: -80px;
+    z-index: -1;
+}
+
+@media screen and (min-width: 680px) {  
+    .bg-animation {
+        background-image: url(/puebla2.jpg);
+    }
+}
+>>>>>>> 92377ee (Black theme)
 
 @keyframes bg-animation {
     0% {

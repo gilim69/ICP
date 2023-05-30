@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 import Tooltip from '@mui/material/Tooltip'
 //import { useUser } from '@auth0/nextjs-auth0/client'        // version with autintefication
-//import Profile from '@/components/profile'                  // version with autintefication
+//import Profile from 'components/profile'                  // version with autintefication
 
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined'
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
@@ -80,7 +80,7 @@ const Navbar = () => {
         { (router.pathname==='/contacts' || router.pathname==='/')? 
           <div className='whatsapp-link'>
             <Link href='https://chat.whatsapp.com/G1xRRP5Qy6R5ps0LpkjGCt'>
-              <img src='/whatsapp-50.png'></img>
+              <Image src='/whatsapp.png' height='51' width='51' alt='Whatsapp'/>
               <div className='whatsapp-div'>Join our Whatsapp group!</div>
             </Link>
           </div>

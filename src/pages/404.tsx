@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import Layout from '@/components/layout'
 
 export default function Home() {
+=======
+import Layout from '@/components/Layout'
+
+export default function ErrorPage() {
+>>>>>>> 92377ee (Black theme)
     return (
       <main className={'body'}>
 

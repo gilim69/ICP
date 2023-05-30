@@ -15,18 +15,36 @@
 }
 
 .event-header {
+<<<<<<< HEAD
     margin-top: 8vh;
     display: flex;
     position: sticky;
 }
 .event-title {
+=======
+    margin: 3vh auto 3vh auto;
+    display: flex;
+    position: sticky;
+}
+.event-header-button {
+    margin: auto 0 auto 0;
+    height: fit-content;
+}
+.event-header-title {
+>>>>>>> 92377ee (Black theme)
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
     width: 100%;
+<<<<<<< HEAD
     margin: 0 0 1.2rem auto;
 }
 .event-status {
+=======
+    margin: auto;
+}
+.event-header-status {
+>>>>>>> 92377ee (Black theme)
     float: right;
     border-radius: 8px;
     border-style: solid;
@@ -35,7 +53,11 @@
     padding: 2px 8px;
     font-weight: bold;
     height: fit-content;
+<<<<<<< HEAD
     margin: 0 8px 2px 2px;
+=======
+    margin: auto 8px auto 2px;
+>>>>>>> 92377ee (Black theme)
 }
 .event-status div {
     font-style: italic;
@@ -72,7 +94,11 @@
     display: none;
 }
 .event-imgdiv:hover .event-chgbtn {
+<<<<<<< HEAD
     display: block;
+=======
+    display: inline-block;
+>>>>>>> 92377ee (Black theme)
     position: absolute;
 }
 
@@ -108,6 +134,7 @@
 }
 
 :root {
+<<<<<<< HEAD
     --fc-small-font-size: .8em;
     --fc-page-bg-color: white;
     --fc-neutral-bg-color: rgba(208, 208, 208, 0.3);
@@ -129,6 +156,29 @@
   
     --fc-more-link-bg-color: #d0d0d0;
     --fc-more-link-text-color: black;
+=======
+    --fc-small-font-size: .6em;
+    --fc-page-bg-color: black;
+    --fc-neutral-bg-color: rgba(208, 208, 208, 0.3);
+    --fc-neutral-text-color: #808080;
+    --fc-border-color: goldenrod;
+  
+    --fc-button-text-color: goldenrod;
+    --fc-button-bg-color: black;
+    --fc-button-border-color: rgba(128, 128, 128, 0.322);
+    --fc-button-hover-bg-color: rgba(211, 211, 211, 0.11);
+    --fc-button-hover-border-color: grey;
+    --fc-button-active-bg-color: rgba(128, 128, 128, 0.265);
+    --fc-button-active-border-color: black;
+  
+    --fc-event-bg-color: black;
+    --fc-event-border-color: black;
+    --fc-event-text-color: goldenrod#000000;
+    --fc-event-selected-overlay-color: rgba(0, 0, 0, 0.25);
+  
+    --fc-more-link-bg-color: black;
+    --fc-more-link-text-color: goldenrod;
+>>>>>>> 92377ee (Black theme)
   
     --fc-event-resizer-thickness: 8px;
     --fc-event-resizer-dot-total-width: 8px;
@@ -138,17 +188,33 @@
     --fc-bg-event-color: rgb(143, 223, 130);
     --fc-bg-event-opacity: 0.3;
     --fc-highlight-color: rgba(188, 232, 241, 0.3);
+<<<<<<< HEAD
     --fc-today-bg-color:  aliceblue;
+=======
+    --fc-today-bg-color:  rgba(218, 165, 32, 0.247);
+>>>>>>> 92377ee (Black theme)
     --fc-now-indicator-color: red;
   
     --fc-daygrid-event-dot-width: 8px;
   
     --fc-list-event-dot-width: 10px;
+<<<<<<< HEAD
     --fc-list-event-hover-bg-color: #f5f5f5;
   }
   
 .fc-icon {
     color: white;
+=======
+    --fc-list-event-hover-bg-color: rgba(128, 128, 128, 0.176);
+  }
+
+#fc-dom-1 {
+    font-size: 1.2rem;
+    text-align: center;
+}
+.fc-icon {
+    color: goldenrod;
+>>>>>>> 92377ee (Black theme)
 }
 .fc-direction-ltr {
     width: 100%;
@@ -158,9 +224,13 @@
     cursor: pointer;
     font-weight: bold;
 }
+<<<<<<< HEAD
 .fc-event-title:hover {
     border-color: #000000;
 }
+=======
+
+>>>>>>> 92377ee (Black theme)
 .fc-view-harness {
     margin: 0, 10px, 0, 10px;
 }

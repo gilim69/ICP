@@ -1,22 +1,22 @@
 import Link from 'next/link'
-import ImageSized from '@/components/imagesized'
+import ImageSized from './ImageSized'
 
 export function getStyle(a) {
   if (!a) {return {}}
 
   return({
-    fontWeight: a.bold? "bold" : "normal",
-    fontStyle: a.italic? "italic" : "normal",
-    color: a.color,
+    fontWeight: a.bold? "bold" : "inherit",
+    fontStyle: a.italic? "italic" : "inherit",
+    color: a.color==="default"? "inherit" : a.color,
     textDecoration: a.underline? "underline" : "none"
   })
 }
 
-export default function BlockHTML({bl}) {
-  const bType = bl.type
-  let b = bl
+export default function BlockHTML({blockData}) {
+  const bType = blockData?.type ?? 'no_type'
+  let b = blockData
   if (!b) {return <div>'Error! Undefined block'</div>}
-  while (b.type) {    // (b.type && !(b.rich_text||b.title) - forced variant
+  while (b.type) {    // (b.type && !(b.rich_text||b.title) - more strong variant
     b = b[b.type]
   }
  // console.log('Block: ', bType,  b)
@@ -29,7 +29,7 @@ export default function BlockHTML({bl}) {
     if (!url) {return <div>Error! No image url</div>}
     return(
       <div className='block-image'>
-        <ImageSized url={url}/>
+        <ImageSized url={url} imgWidth={280} alt={' '}/>
       </div>
     )
   }
@@ -40,7 +40,7 @@ export default function BlockHTML({bl}) {
   if (!b) {return <div>'Error! No rich_text or title property'</div>}
   return (
     <div className={'block-'+bType}> 
-      {b.map((e, i) => {return (
+      {b?.map((e, i) => {return (
         e.href? 
         <Link key={i} href={e.href}><span style={getStyle(e.annotations)}> {e.plain_text} </span></Link>
         : 

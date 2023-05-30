@@ -16,7 +16,12 @@
     "incremental": true,
     "noImplicitAny": false,
     "paths": {
+<<<<<<< HEAD
       "@/*": ["./src/*"]
+=======
+      "@/*": ["./src/*"],
+      "react": [ "./node_modules/@types/react" ]
+>>>>>>> 92377ee (Black theme)
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

@@ -6,26 +6,70 @@
 @import url('anime.css');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap');
 
+<<<<<<< HEAD
+=======
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;1,200;1,500&family=Source+Sans+Pro:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Poppins:ital,wght@0,200;0,500;1,200;1,500&family=Source+Sans+Pro:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Castoro+Titling');
+@font-face {
+  font-family: 'Kollektif';
+  src:
+    url('/fonts/Kollektif.ttf.eot'),
+    url('/fonts/Kollektif.ttf.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Kollektif.ttf.woff') format('woff'),
+    url('/fonts/Kollektif.ttf.svg#Kollektif') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+>>>>>>> 92377ee (Black theme)
 * {
   margin: 0;
   padding: 0;
   outline: none;
   box-sizing: border-box;
+<<<<<<< HEAD
   font-family: 'Work Sans', sans-serif;
   color: black;
 }
 
 body {
   padding-top: 200px;
+=======
+  background: none;
+  color: goldenrod;
+  font-family: 'Roboto', 'Poppins';
+  background-color: none;
+}
+
+body {
+/*  padding-top: 200px; */
+>>>>>>> 92377ee (Black theme)
 /*  background: url(/puebla.jpg) no-repeat center center fixed;
   background-position-y: 68px;
   -webkit-background-size: cover; 
   -moz-background-size: cover;    
   -o-background-size: cover;      
   background-size: cover;         */
+<<<<<<< HEAD
 }
 
 .block-title {
+=======
+  background-color: black;
+}
+
+.main-div {
+  margin-top: 0;
+  width: 100%;
+  top: 0;
+  height: 480px;
+}
+
+.block-title {  
+>>>>>>> 92377ee (Black theme)
   font-size: 2rem;
   font-weight: bold;
 }
@@ -42,9 +86,15 @@ body {
   font-weight: bold;
 }
 .block-paragraph, .block-rich_text {
+<<<<<<< HEAD
   margin-bottom: 1em;
   text-align: justify;
   margin: 0.5rem;
+=======
+  text-align: justify;
+  margin: 0.5rem auto 1rem auto;
+  color: inherit;
+>>>>>>> 92377ee (Black theme)
 }
 .block-bulleted_list_item, .block-numbered_list_item{
   margin-left: 1em;
@@ -58,4 +108,19 @@ body {
   margin-left: 1em;
   padding: 0.5em;
   background-color: beige;
+<<<<<<< HEAD
 }
+=======
+}
+
+.page {
+  color: inherit;
+}
+
+
+.mediatek {
+  width: 100%;
+  margin: auto;
+  max-width: 800px;
+}
+>>>>>>> 92377ee (Black theme)

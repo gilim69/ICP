@@ -1,6 +1,6 @@
 import Head from 'next/head'
-//import Script from 'next/script'
-import Navbar from '@/components/navbar'
+import Script from 'next/script'
+import Navbar from './Navbar'
 import React from 'react'
 
 export default function Layout(props) {
@@ -13,10 +13,12 @@ export default function Layout(props) {
             <meta name='language' content={props.language} key='meta3' />
             <meta name='viewport' content='width=device-width, initial-scale=1.0' key='meta4'/>
             <meta charSet='utf-8' key='meta5'/>
-            <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.5/index.global.min.js'></script>
+            <Script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.5/index.global.min.js'/>
         </Head>
-        <Navbar />
-        {props.children}
+        <div className='main-div'>
+            <Navbar />
+            {props.children}
+        </div>
         </>
     )
 }
