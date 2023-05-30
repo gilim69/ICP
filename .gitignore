@@ -37,8 +37,12 @@ next-env.d.ts
 
 .vercel
 
+<<<<<<< HEAD
 qdb.js
 *.cmd
+=======
+dev.cmd
+>>>>>>> 92377ee (Black theme)
 
 /temp
 
