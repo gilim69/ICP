@@ -1,31 +1,21 @@
 
 :root {
-  --bord: none;
+  --bord: none; /* 1px solid white; */
 }
 a {
   text-decoration: none;
 }
 
 .nav-header {
-<<<<<<< HEAD
-  position: fixed;
-  z-index: 30;
-  top: 0;
-  width: 100%;
-  display: inline-block;
-  background-color: white;
-  background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, white 60%);
-=======
   position: sticky;
   z-index: 30;
   top: 0;
   width: 100%;
   height: 69px;
-  margin-bottom: 110px;
+  margin-bottom: 90px;
   display: inline-block;
   background: none;
 /*  background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, white 60%);*/
->>>>>>> 92377ee (Black theme)
   border: var(--bord);
 }
 .logo {
@@ -37,6 +27,7 @@ a {
   display: flex;
   width: auto;
   border: var(--bord);
+  margin: 20px;
 }
 .nav {
   position: relative;
@@ -47,10 +38,7 @@ a {
   height: 68px;
   float: right;
   border: var(--bord);
-<<<<<<< HEAD
-=======
   background: none;
->>>>>>> 92377ee (Black theme)
 }
 .nav-bar{
   display: flex;
@@ -64,11 +52,7 @@ a {
 .nav-bar div{
   width: 40px;
   height: 4px;
-<<<<<<< HEAD
-  background-color: black;
-=======
   background-color: goldenrod;
->>>>>>> 92377ee (Black theme)
   border-radius: 2px;
 }
 .nav-list{
@@ -77,36 +61,26 @@ a {
   float: left;
   position: fixed;
   top: 68px;
-  min-width: 190px;
+  min-width:210px;
   row-gap: 24px;
   right: -288px;
   padding: 24px 16px;
   transition: all 0.2s;
   min-height: calc(100vh - 60px);
   text-align: left; 
-<<<<<<< HEAD
-  background-color: white;
-  border: 0px;
-  border-left: 2px;
-  border-color: black;
-=======
   background: black;
   border: 0px;
   border-left: 2px;
   border-color: goldenrod;
->>>>>>> 92377ee (Black theme)
   border-style: solid;
   border-radius: 8px;
 }
-.nav-list.dropdown{
+.nav-list.drpdown{
   right: 0;
 }
 .nav-list div {
   border: var(--bord);
-}
-
-.nav-item:hover{
- font-weight: bold;
+  font-size: 0.8rem;
 }
 
 .nav-item {
@@ -114,12 +88,22 @@ a {
   font-weight: normal;
   font-size: 1rem; 
   position: relative;
+  margin-right: 3vw;
+  padding: auto;
   transition: all 0.2s;
-  color: black;
-  vertical-align: middle;
-  margin-left: 8px;
   border: var(--bord);
 }
+.nav-item-div {
+  color: inherit;
+  display:inline-block;
+  height: fit-content;
+  margin: auto 0;
+}
+
+.nav-item:hover{
+  color:rgb(224, 190, 109);
+ }
+ 
 .nav-item.active {
   font-weight: bold;
 }
@@ -139,20 +123,13 @@ a {
   display: block;
   border: var(--bord);
   margin-top: 8vh;
-<<<<<<< HEAD
-=======
   background: none;
->>>>>>> 92377ee (Black theme)
 }
 .whatsapp-div {
   display: none;
   position: absolute;
-<<<<<<< HEAD
-  background-color: white;
-=======
   background: goldenrod;
   color: black;
->>>>>>> 92377ee (Black theme)
   padding: 8px;
   right: 0px;
   border: 1px solid;
@@ -163,7 +140,7 @@ a {
 }
 
 
-@media screen and (min-width: 730px) {  
+@media screen and (min-width: 848px) {  
   .nav-bar{
     display: none;
   }
@@ -176,10 +153,7 @@ a {
     column-gap: 24px;
     align-items: left;
     border-left: 0px;
-<<<<<<< HEAD
-=======
     background: none;
->>>>>>> 92377ee (Black theme)
   }
   .nav-link::before{
     content: '';

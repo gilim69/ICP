@@ -1,19 +1,12 @@
 
 .first-title {
   text-align: center;
-<<<<<<< HEAD
-  margin: 10% auto 200px auto;
-  font-size: 10vh;
-  word-wrap: break-word;
-  color: gold;
-  text-shadow:black 1px 3px 3px;
-=======
   margin: 10% auto 280px auto;
   font-size: 8vh;
   word-wrap: break-word;
   text-shadow:grey 1px 3px 3px;
   background: none;
->>>>>>> 92377ee (Black theme)
+  letter-spacing: 10px;
 }
 
 .error404 {

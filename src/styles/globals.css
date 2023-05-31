@@ -1,63 +1,47 @@
 @import url('language-select.css');
 @import url('main.css');
 @import url('navbar.css');
+@import url('footer.css');
 @import url('events.css');
 @import url('post.css');
 @import url('anime.css');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap');
 
-<<<<<<< HEAD
-=======
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;1,200;1,500&family=Source+Sans+Pro:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Poppins:ital,wght@0,200;0,500;1,200;1,500&family=Source+Sans+Pro:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Castoro+Titling');
+@import url('https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap');
 @font-face {
   font-family: 'Kollektif';
   src:
-    url('/fonts/Kollektif.ttf.eot'),
-    url('/fonts/Kollektif.ttf.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/Kollektif.ttf.woff') format('woff'),
-    url('/fonts/Kollektif.ttf.svg#Kollektif') format('svg');
+    url('fonts/Kollektif.ttf.eot'),
+    url('fonts/Kollektif.ttf.eot?#iefix') format('embedded-opentype'),
+    url('fonts/Kollektif.ttf.woff') format('woff'),
+    url('fonts/Kollektif.ttf.svg#Kollektif') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
->>>>>>> 92377ee (Black theme)
 * {
   margin: 0;
   padding: 0;
   outline: none;
   box-sizing: border-box;
-<<<<<<< HEAD
-  font-family: 'Work Sans', sans-serif;
-  color: black;
-}
-
-body {
-  padding-top: 200px;
-=======
   background: none;
   color: goldenrod;
-  font-family: 'Roboto', 'Poppins';
+  font-family: 'Kollektif', 'Roboto', 'Poppins', Arial, Helvetica, sans-serif;
   background-color: none;
 }
 
 body {
 /*  padding-top: 200px; */
->>>>>>> 92377ee (Black theme)
 /*  background: url(/puebla.jpg) no-repeat center center fixed;
   background-position-y: 68px;
   -webkit-background-size: cover; 
   -moz-background-size: cover;    
   -o-background-size: cover;      
   background-size: cover;         */
-<<<<<<< HEAD
-}
-
-.block-title {
-=======
   background-color: black;
 }
 
@@ -69,32 +53,26 @@ body {
 }
 
 .block-title {  
->>>>>>> 92377ee (Black theme)
   font-size: 2rem;
-  font-weight: bold;
+  margin: 2rem auto rem auto;
 }
 .block-heading_1 {
   font-size: 1.8em;
-  font-weight: bold;
+  margin: 1.8rem auto 0.9rem auto;
 }
 .block-heading_2 {
   font-size: 1.5em;
-  font-weight: bold;
+  margin: 1.5rem auto 0.75rem auto;
+
 }
 .block-heading_3 {
   font-size: 1.2rem;
-  font-weight: bold;
+  margin: 1.2rem auto 0.6rem auto;
 }
 .block-paragraph, .block-rich_text {
-<<<<<<< HEAD
-  margin-bottom: 1em;
   text-align: justify;
-  margin: 0.5rem;
-=======
-  text-align: justify;
-  margin: 0.5rem auto 1rem auto;
+  margin: auto auto 1rem auto;
   color: inherit;
->>>>>>> 92377ee (Black theme)
 }
 .block-bulleted_list_item, .block-numbered_list_item{
   margin-left: 1em;
@@ -107,10 +85,7 @@ body {
   border-left-style: solid;
   margin-left: 1em;
   padding: 0.5em;
-  background-color: beige;
-<<<<<<< HEAD
-}
-=======
+  background-color: rgba(219, 213, 20, 0.094);
 }
 
 .page {
@@ -122,5 +97,5 @@ body {
   width: 100%;
   margin: auto;
   max-width: 800px;
+  height: 100%;
 }
->>>>>>> 92377ee (Black theme)

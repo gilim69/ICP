@@ -1,0 +1,36 @@
+.footer {
+    height: fit-content;   
+    display: flex;
+    background-color: rgb(34, 35, 13);
+    align-items: center;
+    flex-direction: row;
+    column-gap: 48px;
+    flex-wrap: nowrap;
+    margin: auto 0 0 0;
+    padding: 3vh 0;
+}
+
+.footer-part {
+    display: flex;
+    flex-direction: row;
+    column-gap: 21px;
+    flex-wrap: wrap;  
+    align-items: center;
+}
+
+.footer-part.copyright {
+    flex-wrap: nowrap;
+}
+.footer-part.links {
+    padding: 0 8vw;
+}
+.footer-part * {
+    margin: auto 0;
+    max-width: 200px;
+}
+.footer-part.icons {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    column-gap: 12px;
+}
+

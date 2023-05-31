@@ -2,14 +2,13 @@ import * as React from 'react'
 import Link from 'next/link'
 import Button from '@mui/material/Button'
 import Card from '@mui/material/Card'
-import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 
 export default function PostCard({postCardData}) {
     return (
-      <Card sx={{ maxWidth: 680, background: 'goldenrod' }} >
+      <Card sx={{ maxWidth: 680, background: 'rgba(218, 165, 32, 0.88)' }} >
         {postCardData.cover &&
           <CardMedia
             sx={{ height: 210 }}
@@ -28,13 +27,6 @@ export default function PostCard({postCardData}) {
           </Typography>
 
         </CardContent>
-        {postCardData.button &&
-          <CardActions>
-            <Link href={`/blog/${postCardData.id}`}>
-              <Button size="small">Read More...</Button>
-            </Link>
-          </CardActions>
-        }
       </Card>
     )
   }

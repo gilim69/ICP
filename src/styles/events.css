@@ -4,24 +4,17 @@
     border-radius: 8px;
     border-color: black;
     border-left: 3px;
-    margin: 0.5rem 3vw 0.5rem 3vw;
+    margin: 2rem 3vw 0.5rem 3vw;
     overflow: auto;
 }
 @media screen and (min-width: 730px) {
     .event-record {
         width: 80%;
-        margin: 0.5rem auto 0.5rem auto;
+        margin: 2rem auto 0.5rem auto;
     }
 }
 
 .event-header {
-<<<<<<< HEAD
-    margin-top: 8vh;
-    display: flex;
-    position: sticky;
-}
-.event-title {
-=======
     margin: 3vh auto 3vh auto;
     display: flex;
     position: sticky;
@@ -31,20 +24,13 @@
     height: fit-content;
 }
 .event-header-title {
->>>>>>> 92377ee (Black theme)
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
     width: 100%;
-<<<<<<< HEAD
-    margin: 0 0 1.2rem auto;
-}
-.event-status {
-=======
     margin: auto;
 }
 .event-header-status {
->>>>>>> 92377ee (Black theme)
     float: right;
     border-radius: 8px;
     border-style: solid;
@@ -53,11 +39,7 @@
     padding: 2px 8px;
     font-weight: bold;
     height: fit-content;
-<<<<<<< HEAD
-    margin: 0 8px 2px 2px;
-=======
     margin: auto 8px auto 2px;
->>>>>>> 92377ee (Black theme)
 }
 .event-status div {
     font-style: italic;
@@ -94,11 +76,7 @@
     display: none;
 }
 .event-imgdiv:hover .event-chgbtn {
-<<<<<<< HEAD
-    display: block;
-=======
     display: inline-block;
->>>>>>> 92377ee (Black theme)
     position: absolute;
 }
 
@@ -110,7 +88,7 @@
     font-weight: bold;
     font-size: 1.2rem;
     border-left: royalblue;
-    margin: auto 0.5rem;
+    margin: 1.2rem 0.5rem 0.5rem 0.5rem;
 }
 .event-value {
     font-size: 1rem;
@@ -122,8 +100,8 @@
     object-fit: cover;
     overflow: hidden;
     border: inherit;
-    border-color: red;
-    margin: 0 auto 1vh auto;
+    margin: 0 1rem 1vh auto;
+    padding-left: 0.5rem;
 }
 
 /* Calendar block */
@@ -134,29 +112,6 @@
 }
 
 :root {
-<<<<<<< HEAD
-    --fc-small-font-size: .8em;
-    --fc-page-bg-color: white;
-    --fc-neutral-bg-color: rgba(208, 208, 208, 0.3);
-    --fc-neutral-text-color: #808080;
-    --fc-border-color: #ddd;
-  
-    --fc-button-text-color: #000000;
-    --fc-button-bg-color: grey;
-    --fc-button-border-color: grey;
-    --fc-button-hover-bg-color: lightgrey;
-    --fc-button-hover-border-color: grey;
-    --fc-button-active-bg-color: silver;
-    --fc-button-active-border-color: black;
-  
-    --fc-event-bg-color:#ffffff;
-    --fc-event-border-color: #ffffff;
-    --fc-event-text-color: #000000;
-    --fc-event-selected-overlay-color: rgba(0, 0, 0, 0.25);
-  
-    --fc-more-link-bg-color: #d0d0d0;
-    --fc-more-link-text-color: black;
-=======
     --fc-small-font-size: .6em;
     --fc-page-bg-color: black;
     --fc-neutral-bg-color: rgba(208, 208, 208, 0.3);
@@ -178,7 +133,6 @@
   
     --fc-more-link-bg-color: black;
     --fc-more-link-text-color: goldenrod;
->>>>>>> 92377ee (Black theme)
   
     --fc-event-resizer-thickness: 8px;
     --fc-event-resizer-dot-total-width: 8px;
@@ -188,23 +142,12 @@
     --fc-bg-event-color: rgb(143, 223, 130);
     --fc-bg-event-opacity: 0.3;
     --fc-highlight-color: rgba(188, 232, 241, 0.3);
-<<<<<<< HEAD
-    --fc-today-bg-color:  aliceblue;
-=======
     --fc-today-bg-color:  rgba(218, 165, 32, 0.247);
->>>>>>> 92377ee (Black theme)
     --fc-now-indicator-color: red;
   
     --fc-daygrid-event-dot-width: 8px;
   
     --fc-list-event-dot-width: 10px;
-<<<<<<< HEAD
-    --fc-list-event-hover-bg-color: #f5f5f5;
-  }
-  
-.fc-icon {
-    color: white;
-=======
     --fc-list-event-hover-bg-color: rgba(128, 128, 128, 0.176);
   }
 
@@ -214,7 +157,6 @@
 }
 .fc-icon {
     color: goldenrod;
->>>>>>> 92377ee (Black theme)
 }
 .fc-direction-ltr {
     width: 100%;
@@ -224,13 +166,6 @@
     cursor: pointer;
     font-weight: bold;
 }
-<<<<<<< HEAD
-.fc-event-title:hover {
-    border-color: #000000;
-}
-=======
-
->>>>>>> 92377ee (Black theme)
 .fc-view-harness {
     margin: 0, 10px, 0, 10px;
 }

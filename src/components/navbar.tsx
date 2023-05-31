@@ -11,23 +11,23 @@ import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined
 import PermMediaOutlinedIcon from '@mui/icons-material/PermMediaOutlined';
 import ContactPhoneOutlinedIcon from '@mui/icons-material/ContactPhoneOutlined';
 
-const Navbar = () => { 
+export default function Navbar() { 
   const [activeList, setActiveList] = useState(false)
   const router = useRouter()
 //  const { user } = useUser()                                 // version with autintefication
 
   const MENU_LIST = [
-    { text: 'Home', href: '/', icon: <HomeOutlinedIcon /> },
-    { text: 'Events', href: '/calendar', icon: <CalendarMonthOutlinedIcon/> },
-    { text: 'Photo&Video', href: '/media', icon: <PermMediaOutlinedIcon/> },
-    { text: 'Contacts', href: '/contacts',  icon: <ContactPhoneOutlinedIcon/>},
+    { text: 'HOME', href: '/', icon: <HomeOutlinedIcon /> },
+    { text: 'EVENTS', href: '/calendar', icon: <CalendarMonthOutlinedIcon/> },
+    { text: 'PHOTO&VIDEO', href: '/media', icon: <PermMediaOutlinedIcon/> },
+    { text: 'CONTACTS', href: '/contacts',  icon: <ContactPhoneOutlinedIcon/>},
   ]
 
   const NavItem = ({ text, href, icon }) => {
     return (
       <Link href={href}>
         <div className={`${(router.pathname===href) ? ' active' : ''} nav-item `+ text.toLowerCase()}>
-          {icon}&nbsp;<div>{text}</div>
+          {icon}&nbsp;<div className='nav-item-div'>{text}</div>
         </div>
       </Link>
     )
@@ -59,7 +59,7 @@ const Navbar = () => {
           <div key='333'></div>
         </div>
 
-        <div className={`${activeList ? 'dropdown' : ''} nav-list`} key='nav-list' 
+        <div className={`${activeList ? 'drpdown' : ''} nav-list`} key='nav-list' 
               onClick = {() => setActiveList(false)}>
           {MENU_LIST.map((menu) => ( <NavItem {...menu} key={menu.text} />  ))}
 {/*       <div className='nav-item' key='profile'>                // version with autintefication
@@ -80,7 +80,7 @@ const Navbar = () => {
         { (router.pathname==='/contacts' || router.pathname==='/')? 
           <div className='whatsapp-link'>
             <Link href='https://chat.whatsapp.com/G1xRRP5Qy6R5ps0LpkjGCt'>
-              <Image src='/whatsapp.png' height='51' width='51' alt='Whatsapp'/>
+              <Image src='/whatsapp-100.png' height='51' width='51' alt='Whatsapp'/>
               <div className='whatsapp-div'>Join our Whatsapp group!</div>
             </Link>
           </div>
@@ -94,5 +94,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
 
