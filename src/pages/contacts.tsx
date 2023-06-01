@@ -1,18 +1,13 @@
-import Layout from '@/components/Layout'
 import PageHTML from '@/components/PageHTML'
-import Link from 'next/link'
-import Image from 'next/image'
-import LoginIcon from '@mui/icons-material/Login';
+//import LoginIcon from '@mui/icons-material/Login'  //version with auth
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 const { Client } = require('@notionhq/client')
 
-import Button from '@mui/material/Button'
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
+import Card from '@mui/material/Card'
+import CardContent from '@mui/material/CardContent'
+import CardMedia from '@mui/material/CardMedia'
+import Typography from '@mui/material/Typography'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 
 export default function Contacts(props) {
@@ -50,17 +45,17 @@ export default function Contacts(props) {
         </CardContent>
       </Card>
       </div>
-    );
+    )
 }
 
 export async function getStaticProps() {
   const pageId = '04246023eca9412a9c9a3e6dc53c0190'
   const notion = new Client({ auth: process.env.NOTION_KEY })
-  const responseHead = await notion.pages.retrieve({ page_id: pageId });
+  const responseHead = await notion.pages.retrieve({ page_id: pageId })
   const responseChildren = await notion.blocks.children.list({
     block_id: pageId,
     page_size: 50,
-  });
+  })
 
   return {
     props: {

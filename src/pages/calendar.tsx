@@ -6,12 +6,12 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Layout from '@/components/Layout'
 const { Client } = require('@notionhq/client')
-import EventNoteIcon from '@mui/icons-material/EventNote';
+import EventNoteIcon from '@mui/icons-material/EventNote'
 
 import FullCalendar from '@fullcalendar/react' // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 import interactionPlugin from "@fullcalendar/interaction"
-import listPlugin from '@fullcalendar/list';
+import listPlugin from '@fullcalendar/list'
 
 export default function Calendar({eventsData}) {
 let view = 'dayGridMonth'
@@ -53,7 +53,7 @@ if (param.view==='listMonth') {
           height='auto'
           fixedWeekCount={false}
           showNonCurrentDates={false}
- //         expandRows={true}
+          expandRows={true}
           aspectRatio={3}
           handleWindowResize
           stickyHeaderDates
@@ -90,7 +90,7 @@ export async function getStaticProps() {
         }
       ],
     },
-  });
+  })
   return {
     props: {
       eventsData: response.results

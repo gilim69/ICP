@@ -22,10 +22,6 @@
     right: 3px;
 }
 
-.dropdown img {
-  height: 30px;
-}
-
 .dropdown-content a{
   display: flex;
   align-items: left;

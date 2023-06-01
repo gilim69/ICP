@@ -1,19 +1,17 @@
-import Layout from '@/components/Layout'
 import PageHTML from '@/components/PageHTML'
 import Link from 'next/link'
-import Image from 'next/image'
-import LoginIcon from '@mui/icons-material/Login';
+//import LoginIcon from '@mui/icons-material/Login';  version with auth
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 const { Client } = require('@notionhq/client')
 
-import Button from '@mui/material/Button'
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack'
+import Tooltip from '@mui/material/Tooltip'
+
 
 export default function PostPage({postHead, postChildren}) {
   useEffect(()=>{
@@ -48,13 +46,11 @@ export default function PostPage({postHead, postChildren}) {
         </CardContent>
 
           <CardActions>
-              <Button size="small" 
-                onClick={() => router.back()} 
-                startIcon={<ArrowBackIcon/>}
-                sx={{ color: 'gold' }}
-              >
-                  Return
-                </Button>
+            <Link href='/'>
+              <Tooltip title='Go back' sx={{ backgroundColor: 'goldenrod', color: 'black'}}>
+                <span>&#9668;&nbsp;BACK</span>
+              </Tooltip>
+            </Link>
           </CardActions>
       </Card>
       </div>

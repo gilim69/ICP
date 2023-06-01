@@ -107,6 +107,7 @@
 /* Calendar block */
 .event-calendar {
     width: 100%;
+    min-height: 60%;
     margin-left: auto;
     margin-right: auto;
 }

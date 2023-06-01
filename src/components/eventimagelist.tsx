@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { useState, useRef , useLayoutEffect} from 'react'
-//import Box from '@mui/material/Box'
 import Image from 'next/image'
 import Icon from '@mdi/react';
 import { mdiArrowLeftBoldBoxOutline, mdiArrowRightBoldBoxOutline } from '@mdi/js';

@@ -1,14 +1,9 @@
-import * as React from 'react';
+import * as React from 'react'
 import { useEffect } from 'react'
-import { useRouter } from 'next/router'
 import Link from 'next/link'
-import Image from 'next/image';
-import Layout from '@/components/Layout'
 import EventImageList from '@/components/EventImageList'
 import Map from '@/components/Map'
 import BlockHTML from '@/components/BlockHTML'
-import ArrowBackIcon from '@mui/icons-material/ArrowBack'
-import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 const { Client } = require('@notionhq/client')
 
@@ -43,16 +38,17 @@ export default function EventPage({eventData}) {
         <>
                 <div className='event-record'>
                     <header className='event-header'>
-                        <Tooltip title='Go back' sx={{ backgroundColor: 'goldenrod', color: 'black'}}>
                           <div className='event-header-button'>
-                            <Link  href={{
-                                pathname: '/calendar',
-                            //    query: { view: eventData.View},
+                            <Link  
+                              href={{
+                              pathname: '/calendar',
+                              //    query: { view: eventData.View},
                             }}>
-                                <ArrowBackIcon />
+                              <Tooltip title='Go back' sx={{ backgroundColor: 'goldenrod', color: 'black'}}>
+                                <span>&#9668;&nbsp;BACK</span>
+                              </Tooltip>
                             </Link>
                           </div>
-                        </Tooltip>
                         <div className='event-header-title'><BlockHTML blockData={eventData.Name}/></div>
                         <div className={`${eventData.Status.select?.name ?? 'Undefined'} event-header-status`}>
                             Status:
@@ -87,13 +83,9 @@ export default function EventPage({eventData}) {
                             pathname: '/calendar',
                           //  query: { view: p.View},
                         }}>
-                            <Button 
-                              startIcon={<ArrowBackIcon />} 
-                              size="small"
-                              sx={{ color: 'goldenrod' }}
-                            >
-                                Go Back
-                            </Button>
+                          <Tooltip title='Go back' sx={{ backgroundColor: 'goldenrod', color: 'black'}}>
+                              <span>&#9668;&nbsp;BACK</span>
+                          </Tooltip>
                     </Link>
                 </div>
         </>
@@ -135,7 +127,7 @@ export async function getStaticProps(context) {
           }
         ],
       }
-    });
+    })
   
     const paths = response.results.map((event) => ({
       params: { event_id: event.id }

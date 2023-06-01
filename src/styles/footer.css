@@ -1,36 +1,36 @@
 .footer {
-    height: fit-content;   
-    display: flex;
-    background-color: rgb(34, 35, 13);
-    align-items: center;
-    flex-direction: row;
-    column-gap: 48px;
-    flex-wrap: nowrap;
-    margin: auto 0 0 0;
-    padding: 3vh 0;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 150px 1fr 90px;
+    background-color:rgba(218, 165, 32, 0.69);
+    font-size: 0.88rem;
+    color: black;
+    margin-top: 1vh;
+    padding: 1vw 1vh;
 }
 
-.footer-part {
-    display: flex;
-    flex-direction: row;
-    column-gap: 21px;
-    flex-wrap: wrap;  
+.footer-copyright {
+    color: inherit;
     align-items: center;
 }
-
-.footer-part.copyright {
-    flex-wrap: nowrap;
+.footer-links {
+    width: auto;
+    max-width: 680px;
+    align-items: center;
 }
-.footer-part.links {
-    padding: 0 8vw;
+.footer-link {
+    min-width:120px;
+    display: inline-block;
+    margin-left: 8px;
 }
-.footer-part * {
-    margin: auto 0;
-    max-width: 200px;
+.footer * {
+    color: inherit;
 }
-.footer-part.icons {
+.footer-icons {
+    color: inherit;
+    display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    column-gap: 12px;
+    column-gap: 8px;
+    align-items: center;
 }
 

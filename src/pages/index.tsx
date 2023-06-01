@@ -1,22 +1,17 @@
 import Link from 'next/link'
-//import LoginIcon from '@mui/icons-material/Login'
+//import LoginIcon from '@mui/icons-material/Login'       //version with auth
 import { useEffect, useRef, useState} from 'react'
-import { useRouter } from 'next/router'
-import { useUser } from '@auth0/nextjs-auth0/client'
 const { Client } = require('@notionhq/client')
-import Layout from '@/components/Layout'
 import BlockHTML from '@/components/BlockHTML'
 import PostCard from '@/components/PostCard'
 
 export default function Home({blogDbData}) {
-//  const ref = useRef()
-
   const img1 = '/puebla1.jpg'
   const img2 = '/puebla2.jpg'
   const img3 = '/puebla3.jpg'
   const list = [img1, img2, img3]
 
-  let [lsNum, setLsNum] = useState(2);
+  let [lsNum, setLsNum] = useState(2)
 
   useEffect(()=>{
    // console.log('Blog DB Records:', blogDbData[0])
@@ -88,7 +83,7 @@ export async function getStaticProps() {
       ],
     },
 
-  });
+  })
  
   return {
     props: {
