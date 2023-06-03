@@ -5,6 +5,7 @@
     justify-content: center;
     background: none;
     color: black;
+    scroll-behavior: smooth;
   }
   
 .post-list-item {

@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Script from 'next/script'
-import Navbar from './Navbar'
-import Footer from './Footer'
+import Navbar from '@components/Navbar'
+import Footer from '@components/Footer'
 import React from 'react'
 
 export default function Layout(props) {

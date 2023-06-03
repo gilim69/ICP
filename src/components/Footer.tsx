@@ -7,15 +7,15 @@ export default function Footer() {
   <>
     <div className='footer'>
       <div className='footer-copyright'>
-        <div>Copyright © 2023 </div>
-        <div>Int. Club of Puebla.</div>
-        <div> All rights reserved.</div>
+        <div>International Club of Puebla</div>
+        <div>	&copy;&nbsp;2023&nbsp; </div>
       </div>
       <div className='footer-links'>
         <Link href='/'><div className='footer-link'>Home</div></Link>
         <Link href='/#blog'><div className='footer-link'>Blog&News</div></Link>
-        <Link href='/calendar'><div className='footer-link'>Calendar of events</div></Link>
-        <Link href='/media'><div className='footer-link'>Photos&Videos</div></Link>
+        <Link href='/calendar'><div className='footer-link'>Calendar</div></Link>
+        <Link href='/gallery'><div className='footer-link'>Gallery</div></Link>
+        <Link href='/contacts'><div className='footer-link'>Contacts</div></Link>
       </div>
       <div className='footer-icons'>
         <Link href='https://chat.whatsapp.com/G1xRRP5Qy6R5ps0LpkjGCt'>

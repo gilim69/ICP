@@ -1,13 +1,7 @@
 //Events page
 import React from 'react'
-import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import Link from 'next/link'
-import Image from 'next/image'
-import Layout from '@/components/Layout'
 const { Client } = require('@notionhq/client')
-import EventNoteIcon from '@mui/icons-material/EventNote'
-
 import FullCalendar from '@fullcalendar/react' // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 import interactionPlugin from "@fullcalendar/interaction"

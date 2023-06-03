@@ -1,4 +1,4 @@
-import PageHTML from '@/components/PageHTML'
+import PageHTML from '@components/PageHTML'
 //import LoginIcon from '@mui/icons-material/Login'  //version with auth
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'

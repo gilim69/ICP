@@ -2,7 +2,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
-import Tooltip from '@mui/material/Tooltip'
 //import { useUser } from '@auth0/nextjs-auth0/client'        // version with autintefication
 //import Profile from 'components/profile'                  // version with autintefication
 
@@ -19,7 +18,7 @@ export default function Navbar() {
   const MENU_LIST = [
     { text: 'HOME', href: '/', icon: <HomeOutlinedIcon /> },
     { text: 'EVENTS', href: '/calendar', icon: <CalendarMonthOutlinedIcon/> },
-    { text: 'PHOTO&VIDEO', href: '/media', icon: <PermMediaOutlinedIcon/> },
+    { text: 'GALLERY', href: '/gallery', icon: <PermMediaOutlinedIcon/> },
     { text: 'CONTACTS', href: '/contacts',  icon: <ContactPhoneOutlinedIcon/>},
   ]
 
@@ -61,7 +60,7 @@ export default function Navbar() {
 
         <div className={`${activeList ? 'drpdown' : ''} nav-list`} key='nav-list' 
               onClick = {() => setActiveList(false)}>
-          {MENU_LIST.map((menu) => ( <NavItem {...menu} key={menu.text} />  ))}
+          {MENU_LIST.map((menu) => ( <NavItem key={menu.text} {...menu} />  ))}
 {/*       <div className='nav-item' key='profile'>                // version with autintefication
            <Profile />
           </div> */}

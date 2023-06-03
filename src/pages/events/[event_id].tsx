@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { useEffect } from 'react'
 import Link from 'next/link'
-import EventImageList from '@/components/EventImageList'
-import Map from '@/components/Map'
-import BlockHTML from '@/components/BlockHTML'
+import EventImageList from '@components/EventImageList'
+import Map from '@components/Map'
+import BlockHTML from '@components/BlockHTML'
 import Tooltip from '@mui/material/Tooltip'
 const { Client } = require('@notionhq/client')
 

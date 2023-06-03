@@ -1,4 +1,4 @@
-import BlockHTML from './BlockHTML'
+import BlockHTML from '@components/BlockHTML'
 // converting Notion page content from db-query to html-code
 export default function PageHTML({pageContent}) {
 //    console.log('PageHTML', pageContent)

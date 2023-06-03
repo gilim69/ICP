@@ -1,33 +1,38 @@
 import {useState} from 'react'
 import Image from 'next/image'
 
-export default function ImageSized({url, imgWidth, alt}){
+export default function ImageSized({url, imgWidth, imgHeight, alt}){
     if (!url) {return <div />}
+    if (!(imgWidth) && !(imgHeight)) {return <div/>}
 
-    const WIDTH = imgWidth ?? 680
+    const WIDTH = imgWidth ?? 100
+    const HEIGHT = imgHeight ?? 100
 
-    const [width, setWidth] = useState(WIDTH)
-    const [height, setHeight] = useState(~~(WIDTH/1.41))
+    const [iWidth, setIWidth] = useState(WIDTH)
+    const [iHeight, setIHeight] = useState(HEIGHT)
 
     const setSize = (img) => {
         let w = img.naturalWidth ?? WIDTH
-        let h = img.naturalHeight ?? ~~w/1.41
+        let h = img.naturalHeight ?? HEIGHT
 
         if (imgWidth) {
           h = ~~(h*WIDTH/w)
           w = WIDTH
+        } else {
+          w = ~~(w*HEIGHT/h)
+          h = HEIGHT
         }
-        setWidth(w)
-        setHeight(h)
-        console.log('IMAGE SIZE ', imgWidth, w, h)
+        setIWidth(w)
+        setIHeight(h)
+        console.log('IMAGE-SIZE ', alt, imgWidth, w, imgHeight, h)
     }
 
     return(
         <div className='block-image'>
           <Image
             src={url}
-            width={width}
-            height={height}
+            width={iWidth}
+            height={iHeight}
             quality='100'
             alt={alt ?? ' '}
             onLoadingComplete={(img) => setSize(img)}    

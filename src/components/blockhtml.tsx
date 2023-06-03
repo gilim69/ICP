@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import ImageSized from './ImageSized'
+import ImageSized from '@components/ImageSized'
 
 export function getStyle(a) {
   if (!a) {return {}}
@@ -29,7 +29,7 @@ export default function BlockHTML({blockData}) {
     if (!url) {return <div>Error! No image url</div>}
     return(
       <div className='block-image'>
-        <ImageSized url={url} imgWidth={280} alt={' '}/>
+        <ImageSized {...{url: url, imgWidth: 280, imgHeight: 0, alt: ' '}}/>
       </div>
     )
   }

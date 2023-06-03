@@ -1,0 +1,40 @@
+.gall {
+    width: 90%;
+    margin: 5vh auto 5vh auto;
+    max-width: 808px;
+    height: fit-content;
+/*    border: 1px solid white; */
+}
+.MuiSelect-icon {
+  fill: black;
+}
+.MuiSelect-select {
+  text-align: center;
+}
+
+.gall-header {
+  width: 100%;
+  display: flex;
+  background-color: black;
+}
+.gall-center {
+  align-items: center;
+}
+.gall-center * {
+  margin-left: auto;
+  margin-right: auto;
+  width: 380px;
+}
+
+.gall-carousel {
+  height: fit-content;
+  width: auto;
+  min-height: 200px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.gall-divider {
+ margin-top: 8vh;
+ text-align: center;
+}

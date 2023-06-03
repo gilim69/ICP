@@ -2,8 +2,8 @@ import Link from 'next/link'
 //import LoginIcon from '@mui/icons-material/Login'       //version with auth
 import { useEffect, useRef, useState} from 'react'
 const { Client } = require('@notionhq/client')
-import BlockHTML from '@/components/BlockHTML'
-import PostCard from '@/components/PostCard'
+import BlockHTML from '@components/BlockHTML'
+import PostCard from '@components/PostCard'
 
 export default function Home({blogDbData}) {
   const img1 = '/puebla1.jpg'
@@ -14,7 +14,7 @@ export default function Home({blogDbData}) {
   let [lsNum, setLsNum] = useState(2)
 
   useEffect(()=>{
-   // console.log('Blog DB Records:', blogDbData[0])
+    console.log('Blog DB Records:', blogDbData[0])
   })
 
 /*  setTimeout(()=> { 
