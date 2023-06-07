@@ -29,7 +29,7 @@ export default function BlockHTML({blockData}) {
     if (!url) {return <div>Error! No image url</div>}
     return(
       <div className='block-image'>
-        <ImageSized {...{url: url, imgWidth: 280, imgHeight: 0, alt: ' '}}/>
+        <ImageSized url={url}/>
       </div>
     )
   }

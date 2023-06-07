@@ -4,14 +4,20 @@
     font-size: small;
     font-style: normal;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: none; /*1px solid greenyellow;*/
+    position: relative;
+    float: right;
+    margin-right: 1vw;
 }
 .dropdown div {
   white-space: nowrap;
   margin: 0;
+  border: inherit;
 }
 
 .dropbtn {
   cursor: pointer;
+  border: inherit;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -20,6 +26,7 @@
     position: absolute;
     background-color: goldenrod;
     right: 3px;
+    border: inherit;
 }
 
 .dropdown-content a{
@@ -31,10 +38,6 @@
   padding: 10px;
   color: black;
 
-}
-
-.dropdown-content img {
-  height: 30px;
 }
 
 /* Change color of dropdown links on hover */

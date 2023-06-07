@@ -80,7 +80,7 @@ export default function Navbar() {
           <div className='whatsapp-link'>
             <Link href='https://chat.whatsapp.com/G1xRRP5Qy6R5ps0LpkjGCt'>
               <Image src='/whatsapp-100.png' height='51' width='51' alt='Whatsapp'/>
-              <div className='whatsapp-div'>Join our Whatsapp group!</div>
+              <div className='whatsapp-tip'>Join our Whatsapp group!</div>
             </Link>
           </div>
          : '' }

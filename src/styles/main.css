@@ -14,3 +14,24 @@
   color: darkred;
   margin-top: 10vh;
 }
+
+@media screen and (max-width: 480px) {  
+  .first-title{
+    font-size: 6vh;
+    letter-spacing: 6px;
+  }
+}
+
+@media screen and (max-width: 369px) {  
+  .first-title{
+    font-size: 4vh;
+    letter-spacing: 4px;
+  }
+}
+
+@media screen and (max-width: 300px) {  
+  .first-title{
+    font-size: 3vh;
+    letter-spacing: 3px;
+  }
+}

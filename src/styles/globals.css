@@ -6,12 +6,8 @@
 @import url('post.css');
 @import url('anime.css');
 @import url('gallery.css');
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;1,200;1,500&family=Source+Sans+Pro:wght@200&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Poppins:ital,wght@0,200;0,500;1,200;1,500&family=Source+Sans+Pro:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap');
 @font-face {
   font-family: 'Kollektif';
@@ -31,18 +27,12 @@
   box-sizing: border-box;
   background: none;
   color: goldenrod;
-  font-family: 'Kollektif', 'Roboto', 'Poppins', Arial, Helvetica, sans-serif;
+  font-family: 'Kollektif', 'Roboto', Arial, Helvetica, sans-serif;
   background-color: none;
 }
 
 body {
 /*  padding-top: 200px; */
-/*  background: url(/puebla.jpg) no-repeat center center fixed;
-  background-position-y: 68px;
-  -webkit-background-size: cover; 
-  -moz-background-size: cover;    
-  -o-background-size: cover;      
-  background-size: cover;         */
   background-color: black;
 }
 
