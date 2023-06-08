@@ -4,27 +4,22 @@ import { useEffect, useRef, useState} from 'react'
 const { Client } = require('@notionhq/client')
 import BlockHTML from '@components/BlockHTML'
 import PostCard from '@components/PostCard'
+import lang from '../locales/lang'
 
-export default function Home({blogDbData}) {
-  const img1 = '/puebla1.jpg'
-  const img2 = '/puebla2.jpg'
-  const img3 = '/puebla3.jpg'
-  const list = [img1, img2, img3]
+export default function Home({allData}) {
+  const t = lang()
+
+  const localeData = allData.filter((e)=>
+      e.properties.Language.multi_select.some(item => item.name.includes(t.locale))
+    )  
 
   let [lsNum, setLsNum] = useState(2)
 
   useEffect(()=>{
-    console.log('Blog DB Records:', blogDbData[0])
+  //  console.log('Blog DB Records:', blogDbData[0])
   })
 
-/*  setTimeout(()=> { 
-    const i = lsNum>2? 0 : lsNum+1
-    setLsNum(i)
-    const css =  'url('+list[lsNum]+')'
-    ref.current.style.backgroundImage = {css}
-    console.log(ref)}, 4000) */
-
-  const postCardsData = blogDbData.map((e) => {
+  const postCardsData = localeData.map((e) => {
       return {
         id: e.id,
         cover: e.cover? e.cover[e.cover.type]?.url : null,
@@ -38,7 +33,7 @@ export default function Home({blogDbData}) {
   return (
     <>
       <div className='bg-animation'> </div>
-      <div className='first-title'>INTERNATIONAL CLUB OF PUEBLA</div>
+      <div className='first-title'>{t.ICP.toUpperCase()}</div>
 
 
       {/*  <CustomizedDialogs /> */}
@@ -73,12 +68,6 @@ export async function getStaticProps() {
           checkbox: {
             equals: true,
           },
-        },
-        {
-          property: 'Language',
-          select: {
-            equals: 'English',
-          },
         }
       ],
     },
@@ -87,7 +76,7 @@ export async function getStaticProps() {
  
   return {
     props: {
-      blogDbData: response.results
+      allData: response.results
     },
     revalidate: 60
   }

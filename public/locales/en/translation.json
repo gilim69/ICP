@@ -1,0 +1,16 @@
+{
+    "Layout": {
+        "title": "International club of Puebla",
+        "description":"Site of International club of Puebla. About club, events, contacts. Media resources of club.",
+        "keywords": "Puebla, international, club, event",
+        "language": "en",
+        },
+
+    "menu": {
+        "home": "Home",
+        "events": "Events",
+        "gallery": "Gallery",
+        "contacts": "Contacts"
+    },
+    "first_title": "International club of Puebla",
+}

@@ -1,8 +1,6 @@
 import * as React from 'react'
 import { useState, useRef , useLayoutEffect} from 'react'
 import Image from 'next/image'
-import Icon from '@mdi/react';
-import { mdiArrowLeftBoldBoxOutline, mdiArrowRightBoldBoxOutline } from '@mdi/js';
 
 export default function EventImageList(props) {
     const Img = typeof(props.ImageArray)==='string'? new Array(props.ImageArray) : props.ImageArray
@@ -57,10 +55,10 @@ export default function EventImageList(props) {
                     {L?
                     <div className='event-chgbtn'>
                         <span onClick={()=>changePhoto(-1)}>
-                            <Icon path={mdiArrowLeftBoldBoxOutline} size={2} />
+                            &#9658;
                         </span>
                         <span onClick={()=>changePhoto(1)}>
-                            <Icon path={mdiArrowRightBoldBoxOutline} size={2}/>
+                            &#9668;
                         </span>
                     </div>
                     : ''}

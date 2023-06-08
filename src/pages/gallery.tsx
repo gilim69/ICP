@@ -10,6 +10,7 @@ import styled from 'styled-components'
 
 import Slider from 'react-animated-slider'
 import 'react-animated-slider/build/horizontal.css'
+import lang from '../locales/lang'
 
 const ButtonStyled = styled.button<{$disabled?: boolean}>`
     cursor: pointer;
@@ -23,16 +24,9 @@ const ButtonStyled = styled.button<{$disabled?: boolean}>`
       cursor: default;
     };
     `
-const ButtonPrevNext = ({disabled, text, onClick}) => { return (
-  <ButtonStyled
-      disabled={disabled}
-      onClick={onClick}
-   >
-      {text}     
-  </ButtonStyled>)}
 
 export default function Gallery({results}) {
-
+  const t = lang()
 //popup list with titles of image sets in gallery
   const SelectImageset = () => {
         const handleChange = (event: SelectChangeEvent) => {
@@ -111,21 +105,21 @@ export default function Gallery({results}) {
   return (
       <div className='gall' ref={ref}>
         <div className='gall-header'>
-          <Button className='button'
+          <ButtonStyled
             disabled={imgsetIndex <= 0}
             onClick={prevIndex}
           >
-            {'\u25C4\u00A0PREV'}
-          </Button>
+            &#9668;&nbsp;{t.Navigation.prev}
+          </ButtonStyled>
 
           <SelectImageset />
 
-          <Button className='button'
+          <ButtonStyled
             disabled={imgsetIndex >= (imgsets.length - 1)}
             onClick={nextIndex}
           >
-            {'NEXT\u00A0\u25BA'}
-          </Button>
+            {t.Navigation.next}&nbsp;&#9658;
+          </ButtonStyled>
         </div>
 
         <ImageSet imgset={getImgSet(imgsetIndex)} />

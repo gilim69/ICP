@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 //import { useUser } from '@auth0/nextjs-auth0/client'        // version with autintefication
 //import Profile from 'components/profile'                  // version with autintefication
+import lang from '../locales/lang'
 
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined'
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
@@ -15,11 +16,13 @@ export default function Navbar() {
   const router = useRouter()
 //  const { user } = useUser()                                 // version with autintefication
 
+  const t = lang()
+
   const MENU_LIST = [
-    { text: 'HOME', href: '/', icon: <HomeOutlinedIcon /> },
-    { text: 'EVENTS', href: '/calendar', icon: <CalendarMonthOutlinedIcon/> },
-    { text: 'GALLERY', href: '/gallery', icon: <PermMediaOutlinedIcon/> },
-    { text: 'CONTACTS', href: '/contacts',  icon: <ContactPhoneOutlinedIcon/>},
+    { text: t.Links.home.toUpperCase(), href: '/', icon: <HomeOutlinedIcon /> },
+    { text: t.Links.events.toUpperCase(), href: '/calendar', icon: <CalendarMonthOutlinedIcon/> },
+    { text: t.Links.gallery.toUpperCase(), href: '/gallery', icon: <PermMediaOutlinedIcon/> },
+    { text: t.Links.contacts.toUpperCase(), href: '/contacts',  icon: <ContactPhoneOutlinedIcon/>},
   ]
 
   const NavItem = ({ text, href, icon }) => {
@@ -68,11 +71,11 @@ export default function Navbar() {
         
         <div className='nav-end'>
           <div className="dropdown" onClick={() => setActiveList(false)} key='dropdown'>
-            <div className="dropbtn" key='dropbtn'>En</div>
-            <div className="dropdown-content" key='dr-content'>
-              <Link href="#en" key='en'>English</Link>
-              <Link href="#mx" key='es'>Español</Link>
-              <Link href="#ru" key='ru'>Русский</Link>
+            <div className="dropbtn">{router.locale?.toUpperCase()}</div>
+            <div className="dropdown-content">
+              <Link href={router.pathname} locale="en">English</Link>
+              <Link href={router.pathname} locale="es">Español</Link>
+              <Link href={router.pathname} locale="ru">Русский</Link>
             </div>
           </div>
 
@@ -80,7 +83,7 @@ export default function Navbar() {
           <div className='whatsapp-link'>
             <Link href='https://chat.whatsapp.com/G1xRRP5Qy6R5ps0LpkjGCt'>
               <Image src='/whatsapp-100.png' height='51' width='51' alt='Whatsapp'/>
-              <div className='whatsapp-tip'>Join our Whatsapp group!</div>
+              <div className='whatsapp-tip'>{t.Home.joinWhatsapp}</div>
             </Link>
           </div>
          : '' }

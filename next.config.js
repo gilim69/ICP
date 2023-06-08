@@ -8,7 +8,7 @@ const nextConfig = {
     domains: ['s3.us-west-2.amazonaws.com','secure.notion-static.com', 'www.notion.so', 'file.notion.so', 'www.google.com', 'goo.gl'],
   },
   i18n: {
-    locales: ['en', 'mx'],
+    locales: ['en', 'es', 'ru'],
     defaultLocale: 'en',
   },
 }

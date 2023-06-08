@@ -1,16 +1,22 @@
 import * as React from 'react'
 import { useEffect } from 'react'
 import Link from 'next/link'
+import {useRouter} from 'next/router'
 import EventImageList from '@components/EventImageList'
 import Map from '@components/Map'
 import BlockHTML from '@components/BlockHTML'
 import Tooltip from '@mui/material/Tooltip'
 const { Client } = require('@notionhq/client')
+import lang from '../../locales/lang'
 
 export default function EventPage({eventData}) {
-  useEffect(()=>{
-    console.log('Event Data:', eventData)
-  })
+  const router = useRouter()
+  console.log(router.query)
+  useEffect(() => {
+   // i18n.changeLanguage(locale);
+      //  console.log('Event Data:', eventData)
+  }, []);
+  
    
   // parsing url of google-map
   const getMapUrl = (m)=> {
@@ -23,6 +29,8 @@ export default function EventPage({eventData}) {
         }
     return null
   }
+
+  const t = lang()
 
   // properties (titles) of event from DB:
   const eventProperties = ['Date', 'Time', 'Location', 'Description', 'Contacts', 'Price']
@@ -45,7 +53,7 @@ export default function EventPage({eventData}) {
                               //    query: { view: eventData.View},
                             }}>
                               <Tooltip title='Go back' sx={{ backgroundColor: 'goldenrod', color: 'black'}}>
-                                <span>&#9668;&nbsp;BACK</span>
+                                <span>&#9668;&nbsp;{t.Navigation.back}</span>
                               </Tooltip>
                             </Link>
                           </div>
@@ -65,7 +73,7 @@ export default function EventPage({eventData}) {
                     {eventProperties.map((e,i)=> {
                     return( eventData[e].id && eventData[e][eventData[e].type]?.length ?
                         <div key={eventData[e].id} className='event-element'>
-                            <div className='event-head'>{e}: </div>
+                            <div className='event-head'>{t.Event[e]}: </div>
                             <div className='event-value'>
                               <BlockHTML blockData={eventData[e]}/>
                             </div>
@@ -84,7 +92,7 @@ export default function EventPage({eventData}) {
                           //  query: { view: p.View},
                         }}>
                           <Tooltip title='Go back' sx={{ backgroundColor: 'goldenrod', color: 'black'}}>
-                              <span>&#9668;&nbsp;BACK</span>
+                              <span>&#9668;&nbsp;{t.Navigation.back}</span>
                           </Tooltip>
                     </Link>
                 </div>
@@ -116,17 +124,7 @@ export async function getStaticProps(context) {
     const notion = new Client({ auth: process.env.NOTION_KEY})
     const databaseId = process.env.NOTION_DB_EVENTS_ID
     const response = await notion.databases.query({
-      database_id: databaseId,
-      filter: {
-        or: [
-          {
-            property: 'Language',
-            select: {
-            equals: 'English',
-            },
-          }
-        ],
-      }
+      database_id: databaseId
     })
   
     const paths = response.results.map((event) => ({

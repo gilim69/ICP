@@ -1,0 +1,16 @@
+{
+    "Layout".: {
+        "title": "Club internacional de Puebla",
+        "description":"Sitio del Club Internacional de Puebla. Sobre club, eventos, contactos. Medios de comunicación del club.",
+        "keywords": "Puebla, internacional, club, evento",
+        "language": "mx",
+        },
+
+    "menu": {
+        "home": "Hogar",
+        "events": "Evventos",
+        "gallery": "Galería",
+        "contacts": "Contactos"
+    },
+    "first_title": "Club internacional de Puebla",
+}

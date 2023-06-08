@@ -6,33 +6,34 @@ import FullCalendar from '@fullcalendar/react' // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 import interactionPlugin from "@fullcalendar/interaction"
 import listPlugin from '@fullcalendar/list'
+import lang from '../locales/lang'
 
 export default function Calendar({eventsData}) {
-let view = 'dayGridMonth'
-const router = useRouter()
-const param = router.query
-if (param.view==='listMonth') {
-  view='listMonth'
-}
+  let view = 'dayGridMonth'
 
-/*  useEffect(()=>{
-    console.log('Results:', eventsData)
-  })*/
-
+  const t = lang()
+  const localeData = eventsData.filter((e)=>
+  e.properties.Language.multi_select.some(item => item.name.includes(t.locale))
+)
+  const router = useRouter()
+  
   const setEvent = (e) => {
     const ret = {
       id: e.id,
       title: e.properties.Name.title[0]?.plain_text ?? 'UNDEFINED NAME OF EVENT!',
       start: e.properties.Date.date?.start ?? 'Undefined Date!',
-      url: '/events/'+e.id
+      url: '/events/' + e.id
     }
     return ret 
   }
 
-  const events = eventsData.map((e) => setEvent(e))
+  const events = localeData.map((e) => setEvent(e))
 
-  function eventToolTip(info){
-    
+  const eventClick = (info) => {
+    router.push({
+      pathname: '/post/[event_id]',
+      query: { event_id: info.event.id },
+    }, undefined, { locale: t.locale })
   }
 
   return (
@@ -51,19 +52,19 @@ if (param.view==='listMonth') {
           aspectRatio={3}
           handleWindowResize
           stickyHeaderDates
-          eventMouseEnter={eventToolTip}
+          locale={t.locale}
+          eventClick = {eventClick}
           headerToolbar={
             {left: 'prev,next',
             center: 'title',
             right: 'dayGridWeek,dayGridMonth,listMonth'}
           }
           views={{
-            dayGridWeek: { buttonText:'WEEK'},
-            dayGridMonth: { buttonText:'MONTH'},
-            listMonth: { buttonText: 'Events by list' },
+            dayGridWeek: { buttonText:t.Calendar.week},
+            dayGridMonth: { buttonText:t.Calendar.month},
+            listMonth: { buttonText: t.Calendar.events_by_list },
           }}
           selectable
- //         eventClick={handleEventClick}
         />
       </div>
     </>
@@ -75,15 +76,7 @@ export async function getStaticProps() {
   const notion = new Client({ auth: process.env.NOTION_KEY})
   const databaseId = process.env.NOTION_DB_EVENTS_ID
   const response = await notion.databases.query({
-    database_id: databaseId,
-    filter: {
-      or: [
-        {
-          property: 'Language',
-          select: { equals: 'English', },
-        }
-      ],
-    },
+    database_id: databaseId
   })
   return {
     props: {
