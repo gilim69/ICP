@@ -68,7 +68,8 @@ export default function Calendar({eventsData}) {
       Description: <BlockHTML blockData={ev.Description}/>,
       Contacts: <BlockHTML blockData={ev.Contacts}/>,
       Price: <BlockHTML blockData={ev.Price}/>,
-      Map: getMapUrl(ev.Map.url)
+      Map: getMapUrl(ev.Map.url),
+      ImgUrl: ev.Images.files[0]?.file?.url
     }
     setEventProps(eventData)
     setViewEvent(true)
