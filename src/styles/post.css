@@ -15,6 +15,7 @@
     margin-right: auto;
     margin-bottom: 8vh;
     background: none;
+    color: black;
 }
 
 .post-title {
@@ -38,4 +39,6 @@
 .post-text {
     text-align: justify;
     margin-top: 3vh;
+    color: black;
+
 }

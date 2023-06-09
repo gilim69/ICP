@@ -24,6 +24,9 @@ export default function Navbar() {
     { text: t.Links.gallery.toUpperCase(), href: '/gallery', icon: <PermMediaOutlinedIcon/> },
     { text: t.Links.contacts.toUpperCase(), href: '/contacts',  icon: <ContactPhoneOutlinedIcon/>},
   ]
+  //const localePath = MENU_LIST.some(item => item.href.includes(router.pathname))? router.pathname : '/'
+  const localePath = router.pathname.includes('blog')? '/' : 
+                    router.pathname.includes('event')? '/calendar' : router.pathname
 
   const NavItem = ({ text, href, icon }) => {
     return (
@@ -54,14 +57,14 @@ export default function Navbar() {
         
       <nav className="nav">
 
-        <div className='nav-bar' key='nav-bar'
+        <div className='nav-bar' 
               onClick = {() => {setActiveList(!activeList)}}>
           <div key='111'></div>
           <div key='222'></div>
           <div key='333'></div>
         </div>
 
-        <div className={`${activeList ? 'drpdown' : ''} nav-list`} key='nav-list' 
+        <div className={`${activeList ? 'drpdown' : ''} nav-list`}
               onClick = {() => setActiveList(false)}>
           {MENU_LIST.map((menu) => ( <NavItem key={menu.text} {...menu} />  ))}
 {/*       <div className='nav-item' key='profile'>                // version with autintefication
@@ -73,16 +76,16 @@ export default function Navbar() {
           <div className="dropdown" onClick={() => setActiveList(false)} key='dropdown'>
             <div className="dropbtn">{router.locale?.toUpperCase()}</div>
             <div className="dropdown-content">
-              <Link href={router.pathname} locale="en">English</Link>
-              <Link href={router.pathname} locale="es">Español</Link>
-              <Link href={router.pathname} locale="ru">Русский</Link>
+              <Link href={localePath} locale="en">English</Link>
+              <Link href={localePath} locale="es">Español</Link>
+              <Link href={localePath} locale="ru">Русский</Link>
             </div>
           </div>
 
         { (router.pathname==='/contacts' || router.pathname==='/')? 
           <div className='whatsapp-link'>
             <Link href='https://chat.whatsapp.com/G1xRRP5Qy6R5ps0LpkjGCt'>
-              <Image src='/whatsapp-100.png' height='51' width='51' alt='Whatsapp'/>
+              <Image src='/whatsapp-50.png' height='48' width='48' alt='Whatsapp'/>
               <div className='whatsapp-tip'>{t.Home.joinWhatsapp}</div>
             </Link>
           </div>

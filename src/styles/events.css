@@ -1,48 +1,53 @@
 .event-record {
+    position: fixed;
+    width: 100vw;
+    height: 95vh;
+    left: 2vw;
+    top: 2vh;
     flex-wrap: wrap;
-    border: inherit;
     border-radius: 8px;
-    border-color: black;
-    border-left: 3px;
-    margin: 2rem 3vw 0.5rem 3vw;
-    overflow: auto;
+    border: 1px solid goldenrod;
+    background:rgb(16, 12, 2);
+    margin: auto;
+    padding-top: 1vh;
+    overflow: hidden;
+    z-index: 4800;
 }
 @media screen and (min-width: 730px) {
     .event-record {
         width: 80%;
-        margin: 2rem auto 0.5rem auto;
+        left: 10%;
     }
 }
 
 .event-header {
-    margin: 3vh auto 3vh auto;
     display: flex;
-    position: sticky;
+    height: 8vh;
+    width: 100%;
 }
 .event-header-button {
-    margin: auto 0 auto 0;
-    height: fit-content;
+    float: right;
+    cursor: pointer;
+    padding-right: 1vw;
 }
 .event-header-title {
     font-size: 2rem;
-    font-weight: bold;
     text-align: center;
     width: 100%;
     margin: auto;
 }
 .event-header-status {
-    float: right;
-    border-radius: 8px;
-    border-style: solid;
+    float: left;
+    border-radius: 6px;
+    border: 1px solid;
     font-size: 0.8rem;
     text-align: center;
-    padding: 2px 8px;
-    font-weight: bold;
-    height: fit-content;
-    margin: auto 8px auto 2px;
+    padding: 4px 12px;
+    margin-left: 0.8rem;
 }
-.event-status div {
+.event-header-status div {
     font-style: italic;
+    font-size: 1rem;
 }
 /*.event-status.Canceled {
     background-color: red;
@@ -54,6 +59,10 @@
     background-color: grey;
     color: white;
 }*/
+.event-data {
+    height: 89vh;
+    overflow-y: auto;
+}
 
 .event-imgblock {
     object-fit: cover;
@@ -85,10 +94,9 @@
     min-width: 280;
 }
 .event-head {
-    font-weight: bold;
     font-size: 1.2rem;
     border-left: royalblue;
-    margin: 1.2rem 0.5rem 0.5rem 0.5rem;
+    margin: 1.8rem 0.5rem 0.8rem 0.5rem;
 }
 .event-value {
     font-size: 1rem;
@@ -165,7 +173,6 @@
 }
 .fc-event-title {
     cursor: pointer;
-    font-weight: bold;
 }
 .fc-view-harness {
     margin: 0, 10px, 0, 10px;
@@ -176,6 +183,11 @@
 .fc-list-table  {
     width: 100%;
     margin: 0%;
+  }
+
+  .fc-daygrid-day-events {
+    font-size: 1.5em;
+    white-space: wrap;
   }
 
 @media screen and (min-width: 768px) {

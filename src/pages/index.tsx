@@ -6,7 +6,11 @@ import BlockHTML from '@components/BlockHTML'
 import PostCard from '@components/PostCard'
 import lang from '../locales/lang'
 
-export default function Home({allData}) {
+import axios from 'axios';
+import { aX } from '@fullcalendar/core/internal-common'
+
+
+export default function Home({allData, ax}) {
   const t = lang()
 
   const localeData = allData.filter((e)=>
@@ -16,6 +20,7 @@ export default function Home({allData}) {
   let [lsNum, setLsNum] = useState(2)
 
   useEffect(()=>{
+    console.log('Ax', ax)
   //  console.log('Blog DB Records:', blogDbData[0])
   })
 
@@ -56,7 +61,7 @@ export default function Home({allData}) {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const notion = new Client({ auth: process.env.NOTION_KEY})
   const databaseId = process.env.NOTION_DB_BLOGS_ID
   const response = await notion.databases.query({
@@ -77,8 +82,10 @@ export async function getStaticProps() {
   return {
     props: {
       allData: response.results
-    },
-    revalidate: 60
+    }
   }
 }
+
+
+
 

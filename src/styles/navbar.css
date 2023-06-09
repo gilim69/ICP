@@ -129,6 +129,8 @@ a {
 .whatsapp-tip {
   display: none;
   position: absolute;
+  min-width: 28vw;
+  text-align: center;
   background: goldenrod;
   color: black;
   padding: 8px;

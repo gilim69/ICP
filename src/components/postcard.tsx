@@ -20,9 +20,9 @@ export default function PostCard({postCardData}) {
             {postCardData.title}
           </Typography>
           
-          <Typography gutterBottom component="div" color="text.secondary">
+          <div style={{color: 'black'}}>
             {postCardData.description}
-          </Typography>
+          </div>
 
         </CardContent>
       </Card>

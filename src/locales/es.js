@@ -4,9 +4,9 @@ export const es =
     ICP: 'Club internacional de Puebla',
     Navigation: {
         back: 'ATRÁS',
-        forward: 'ADELANTE',
+        forward: 'SIG',
         next: 'PRÓX',
-        prev: 'ANTER'
+        prev: 'ANT'
     },
     Head: {
         description:'Sitio del Club Internacional de Puebla. Sobre club, eventos, contactos. Medios de comunicación del club.',

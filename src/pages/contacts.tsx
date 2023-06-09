@@ -7,8 +7,6 @@ import lang from '../locales/lang'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
-import Typography from '@mui/material/Typography'
-import { ResourceStore } from 'i18next'
 
 export default function Contacts(props) {
   const t = lang()
@@ -33,10 +31,10 @@ console.log('head ', headInf.title)
           />
         : ''}
         <CardContent>
-          <Typography gutterBottom variant="h4" component="div" color="black">
+          <h1 style={{color: 'black', marginBottom: '1rem'}}>
             {headInf.icon}
             {headInf.title}
-          </Typography>
+          </h1>
 
           <div style={{color: 'black'}}>
             <PageHTML pageContent={props.pageChildren}/>
@@ -48,9 +46,9 @@ console.log('head ', headInf.title)
     )
 }
 
-export async function getStaticProps(params) {
-  let pageId = params.locale==='es'? '865209aad6574775a5aa0836de25a493' :
-    params.locale==='ru'? '688e4b7017e14fb695662963cc2bdde1' : '04246023eca9412a9c9a3e6dc53c0190'
+export async function getServerSideProps({locale}) {
+  let pageId = locale==='es'? '865209aad6574775a5aa0836de25a493' :
+    locale==='ru'? '688e4b7017e14fb695662963cc2bdde1' : '04246023eca9412a9c9a3e6dc53c0190'
  
   const notion = new Client({ auth: process.env.NOTION_KEY })
   const responseHead = await notion.pages.retrieve({ page_id: pageId })
@@ -63,10 +61,8 @@ export async function getStaticProps(params) {
     props: {
       pageHead: responseHead,
       pageChildren: responseChildren.results,
-      pageID: pageId,
-      params: params
-    },
-    revalidate: 60
+      pageID: pageId
+    }
   }
 }
 

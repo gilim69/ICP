@@ -27,13 +27,28 @@
   box-sizing: border-box;
   background: none;
   color: goldenrod;
-  font-family: 'Kollektif', 'Roboto', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   background-color: none;
+  font-weight: 100;
 }
 
 body {
 /*  padding-top: 200px; */
   background-color: black;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;               /* ширина всей полосы прокрутки */
+}
+
+*::-webkit-scrollbar-track {
+  background:black;        /* цвет зоны отслеживания */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(218, 165, 32, 0.8);    /* цвет бегунка */
+  border-radius: 8px;       /* округлось бегунка */
+  border: none;  /* отступ вокруг бегунка */
 }
 
 .main-div {

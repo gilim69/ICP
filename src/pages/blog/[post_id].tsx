@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 const { Client } = require('@notionhq/client')
+import lang from '../../locales/lang'
 
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -14,10 +15,13 @@ import Tooltip from '@mui/material/Tooltip'
 
 
 export default function PostPage({postHead, postChildren}) {
+  const t = lang()
+
   useEffect(()=>{
       console.log('POST DATA:', postHead, postChildren)
     })
     const router = useRouter()
+    const routePath='/'
 
     const postHeadData = {
       icon: postHead.icon? postHead.icon.emoji || <img src={postHead.icon.external?.url} height='30'/> : null,
@@ -27,7 +31,7 @@ export default function PostPage({postHead, postChildren}) {
 
     return (
       <div className='post-list-item'>
-      <Card sx={{ maxWidth: 680, backgroundColor: 'black' }}>
+      <Card sx={{ maxWidth: 680, backgroundColor: 'black', color: 'goldenrod' }}>
         {postHeadData.img?
           <CardMedia
             sx={{ height: 210 }}
@@ -36,10 +40,11 @@ export default function PostPage({postHead, postChildren}) {
           />
         : ''}
         <CardContent>
-          <Typography gutterBottom variant="h4" component="div">
+          <h1 style={{fontWeight: 'normal'}}>
             {postHeadData.icon}
             {postHeadData.title}
-          </Typography>
+          </h1>
+
 
           <PageHTML pageContent={postChildren}/>
 
@@ -47,8 +52,8 @@ export default function PostPage({postHead, postChildren}) {
 
           <CardActions>
             <Link href='/'>
-              <Tooltip title='Go back' sx={{ backgroundColor: 'goldenrod', color: 'black'}}>
-                <span>&#9668;&nbsp;BACK</span>
+              <Tooltip title='Go back' >
+                <span>&#9668;&nbsp;{t.Navigation.back}</span>
               </Tooltip>
             </Link>
           </CardActions>
