@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState, useRef, useLayoutEffect } from 'react'
 import Image from 'next/image'
-import ViewImage from '@components/ViewImage'
+import ViewImage from '@/components/ImageViewer'
 
 export default function ImageSized({url, alt = '', byHeight = false}){
     if (!url) {return <div />}

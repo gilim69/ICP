@@ -1,15 +1,19 @@
 import {useState} from 'react'
 import ImageList from '@mui/material/ImageList'
 import ImageListItem from '@mui/material/ImageListItem'
-import ViewImage from '@components/ViewImage'
+import ImageViewer from '@/components/ImageViewer'
 
-export default function ImageSet({imgset}) {
+export default function ImageSet({imgset, columns}) {
     const [viewOpen, setViewOpen] = useState(false)
     const [viewUrl, setViewUrl] = useState('')
 
     const openView = (url) => {
-        setViewUrl(url)
-        setViewOpen(true)
+        if (columns===1) {
+            return null
+        } else {
+            setViewUrl(url)
+            setViewOpen(true)
+        }
     }
 
     const setClose = () => {
@@ -18,7 +22,7 @@ export default function ImageSet({imgset}) {
     
   return (
     <div className='imageset'>
-        <ImageList variant="masonry" cols={4} gap={8}>
+        <ImageList variant="masonry" cols={columns} gap={8}>
             {imgset.map((item) => (
             <ImageListItem key={item.img}>
                 <img
@@ -27,12 +31,13 @@ export default function ImageSet({imgset}) {
                     alt={item.title}
                     loading="lazy"
                     onClick={()=>openView(item.img)}
+                    style={{cursor: 'pointer'}}
                 />
             </ImageListItem>
             ))}
         </ImageList>
     
-        {viewOpen && <ViewImage url={viewUrl} onClick={setClose}/> }
+        {viewOpen && <ImageViewer url={viewUrl} onClick={setClose}/> }
     </div>
   );
 }

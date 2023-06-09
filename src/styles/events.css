@@ -1,8 +1,8 @@
 .event-record {
     position: fixed;
-    width: 100vw;
+    width: 98vw;
     height: 95vh;
-    left: 2vw;
+    left: 1vw;
     top: 2vh;
     flex-wrap: wrap;
     border-radius: 8px;
@@ -49,21 +49,10 @@
     font-style: italic;
     font-size: 1rem;
 }
-/*.event-status.Canceled {
-    background-color: red;
-}
-.event-status.Finished {
-    background-color: blueviolet;
-}
-.event-status.Undefined {
-    background-color: grey;
-    color: white;
-}*/
 .event-data {
     height: 89vh;
     overflow-y: auto;
 }
-
 .event-imgblock {
     object-fit: cover;
     overflow: hidden;

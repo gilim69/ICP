@@ -27,73 +27,15 @@ const ButtonStyled = styled.button<{$disabled?: boolean}>`
 
 export default function Gallery({results}) {
   const t = lang()
-//popup list with titles of image sets in gallery
-  const SelectImageset = () => {
-        const handleChange = (event: SelectChangeEvent) => {
-          setImgsetIndex(Number(event.target.value))
-        } 
-        return (
-          <>
-                <FormControl 
-                  sx={{ mb: 8, height: 48, width: 9/10, minWidth: 280, 
-                  background: 'none' }}
-                >
-                  <Select
-                  sx={{color: 'goldenrod', border: 'none'}}
-                    value={imgsetIndex.toString()}
-                    onChange={handleChange}
-                  >
-                    {imgsets.map((e, i) => (
-                      <MenuItem 
-                        key={e.id} 
-                        value={i} 
-                        sx={{color: 'black'}}
-                      >
-                        {e.properties.Name.title[0].plain_text}
-                      </MenuItem>
-                  ))}
-                  </Select> 
-                </FormControl>
-          </>
-        )
-      }
-
-//setting the index of current image set
-  const prevIndex = () => {
-        let ind = imgsetIndex-1
-        ind = (ind<=0)? 0 : ind
-        setImgsetIndex(ind)
-      }
-  const nextIndex = () => {
-        let ind = imgsetIndex+1
-        const l = imgsets.length - 1
-        ind = (ind>=l)? l : ind
-        setImgsetIndex(ind)
-      }
-//==========================================
   const ref = useRef<HTMLDivElement>(null)
-  const [width, setWidth] = useState(0)
-  const [height, setHeight] = useState(0)
-  const [columns, setColumns] = useState(0)
-  const [imgsetIndex, setImgsetIndex] = useState(0)
+  const [columns, setColumns] = useState(1)
   const imgsets = results.filter((e) => e.properties.Photo.files.length > 0)
-  let imageSizeX = 100
-  let imageSizeY = 100
 
   useLayoutEffect(() => {
     const w = ref?.current?.offsetParent?.clientWidth ?? 381
-    const h = ref?.current?.offsetParent?.clientHeight ?? 328
-
-    setWidth(w)
-    setHeight(h)
     setColumns(~~(w/200))
-    console.log('Imglist', w, ref, width, columns)
+    console.log('Imglist', w, ref, results)
   }, [])
-
-  const getImageSize = (img) => {
-    imageSizeX = img.naturalWidth ?? 100
-    imageSizeY = img.naturalHeight ?? 100
-  }
   
   const getImgSet = (imgsetIndex) => {
     return (imgsets[imgsetIndex].properties.Photo.files.map((e)=> { return(
@@ -102,40 +44,36 @@ export default function Gallery({results}) {
             )}))
   }
 
+  const getTitle = (e, locale) => {
+    const title = e.properties['Name_'+locale]?.rich_text[0]?.plain_text ?? 
+                  e.properties.Name.title[0]?.plain_text ?? 
+                  'Unnamed image set';
+    return title
+  }
+
   return (
-      <div className='gall' ref={ref}>
-        <div className='gall-header'>
-          <ButtonStyled
-            disabled={imgsetIndex <= 0}
-            onClick={prevIndex}
-          >
-            &#9668;&nbsp;{t.Navigation.prev}
-          </ButtonStyled>
+    <div className='gall' ref={ref}>
+      {imgsets.map((e, i)=>(
+        <div key={i}>
+          <div className='gall-header'>
+            {getTitle(e, t.locale)}
+          </div>
 
-          <SelectImageset />
+          <ImageSet imgset={getImgSet(i)} columns={columns} />
 
-          <ButtonStyled
-            disabled={imgsetIndex >= (imgsets.length - 1)}
-            onClick={nextIndex}
-          >
-            {t.Navigation.next}&nbsp;&#9658;
-          </ButtonStyled>
+          {/*<div className='gall-divider'>Variant with slider</div>
+              <Slider direction="horizontal" autoplay={4000}>
+                {imgsets[imgsetIndex]?.properties.Photo.files.map((img, index) =>
+                  <div key={index} className='gall-carousel'>
+                  </div>)}
+              </Slider> */}
         </div>
-
-        <ImageSet imgset={getImgSet(imgsetIndex)} />
-
- {/*     <div className='gall-divider'>Variant with slider</div>
-        <Slider direction="horizontal" autoplay={4000}>
-          {imgsets[imgsetIndex]?.properties.Photo.files.map((img, index) => 
-            <div key={index} className='gall-carousel'>
-
-            </div>)}
-          </Slider> */}
-      </div>
+      ))}
+    </div>
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const notion = new Client({ auth: process.env.NOTION_KEY})
   const databaseId = process.env.NOTION_DB_PHOTOS_ID
   const response = await notion.databases.query({

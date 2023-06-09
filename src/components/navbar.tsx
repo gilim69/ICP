@@ -43,7 +43,6 @@ export default function Navbar() {
     <div className="nav-header">
 
       <div className='logo'>
-        <Link href='/'>
           <Image
             src="/logoA1.png"
             alt="International club Puebla"
@@ -52,7 +51,6 @@ export default function Navbar() {
             height={180}
             priority
           />
-        </Link>
       </div>
         
       <nav className="nav">
