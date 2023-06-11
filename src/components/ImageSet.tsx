@@ -15,10 +15,6 @@ export default function ImageSet({imgset, columns}) {
             setViewOpen(true)
         }
     }
-
-    const setClose = () => {
-        setViewOpen(false)
-    }
     
   return (
     <div className='imageset'>
@@ -37,7 +33,7 @@ export default function ImageSet({imgset, columns}) {
             ))}
         </ImageList>
     
-        {viewOpen && <ImageViewer url={viewUrl} onClick={setClose}/> }
+        {viewOpen && <ImageViewer url={viewUrl} onClick={()=>setViewOpen(false)}/> }
     </div>
   );
 }

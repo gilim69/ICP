@@ -1,28 +1,20 @@
 import Link from 'next/link'
 //import LoginIcon from '@mui/icons-material/Login'       //version with auth
-import { useEffect, useRef, useState} from 'react'
+import { useState} from 'react'
 const { Client } = require('@notionhq/client')
 import BlockHTML from '@components/BlockHTML'
 import PostCard from '@components/PostCard'
 import lang from '../locales/lang'
 
-import axios from 'axios';
 import { aX } from '@fullcalendar/core/internal-common'
 
 
-export default function Home({allData, ax}) {
+export default function Home({allData}) {
   const t = lang()
-
+  //console.log('Home props ', allData)
   const localeData = allData.filter((e)=>
       e.properties.Language.multi_select.some(item => item.name.includes(t.locale))
     )  
-
-  let [lsNum, setLsNum] = useState(2)
-
-  useEffect(()=>{
-    console.log('Ax', ax)
-  //  console.log('Blog DB Records:', blogDbData[0])
-  })
 
   const postCardsData = localeData.map((e) => {
       return {
@@ -31,23 +23,21 @@ export default function Home({allData, ax}) {
         icon: e.icon? e.icon.emoji || <img src={e.icon.external?.url} height='30'/> : null,
         title: e.properties.Title.title[0]? e.properties.Title.title[0].plain_text : 'UNDEFINED TITLE OF POST!',
         description: <BlockHTML blockData={e.properties.Description}/>,
-        button: !e.properties.NoMoreInfo.checkbox
+        link: !e.properties.NoMoreInfo.checkbox
       }
     })
 
   return (
     <>
       <div className='bg-animation'> </div>
+
       <div className='first-title'>{t.ICP.toUpperCase()}</div>
 
-
-      {/*  <CustomizedDialogs /> */}
-
-        <div className='post-list' id='blog'>
+      <div className='post-list' id='blog'>
           {postCardsData.map((e, ind) => {
             return (
             <div key={ind} className='post-list-item'>
-              {e.button?
+              {e.link?
               <Link href={`/blog/${e.id}`}>
                 <PostCard postCardData={e} />
               </Link>
@@ -56,7 +46,7 @@ export default function Home({allData, ax}) {
             </div>
             )
           })}
-        </div>
+      </div>
     </>
   )
 }
@@ -76,6 +66,12 @@ export async function getServerSideProps() {
         }
       ],
     },
+    sorts: [
+      {
+        property: 'Date',
+        direction: 'descending',
+      },
+    ],
 
   })
  

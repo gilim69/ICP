@@ -33,6 +33,7 @@
     "i18next": "^22.5.1",
     "i18next-browser-languagedetector": "^7.0.2",
     "i18next-http-backend": "^2.2.1",
+    "js-cookie": "^3.0.5",
     "mui": "^0.0.1",
     "nestjs-notion": "^0.2.1",
     "next": "13.3.4",

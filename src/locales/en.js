@@ -43,5 +43,8 @@ export const en =
         contacts: 'Contacts',
         phone: 'Phone',
         address: 'Address'
+    },
+    files: {
+        image_loading: '/loading-en.png'
     }
 }

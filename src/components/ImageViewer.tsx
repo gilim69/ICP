@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import styled from 'styled-components';
 import Zoom from '@mui/material/Zoom'
+import lang from '../locales/lang'
 
 export default function ImageViewer({url, onClick}) {
     if (!url) {return null}
@@ -17,8 +18,9 @@ export default function ImageViewer({url, onClick}) {
         color: black;
         cursor: pointer;
         overflow: auto;
+        z-index: 8000;
      `
-      
+    
     const ViewerImage = styled.div`
         position: relative;
         width: 98vw;
@@ -31,7 +33,7 @@ export default function ImageViewer({url, onClick}) {
         cursor: pointer;
         overflow: auto;
       `
-      
+    const t = lang() 
 
     return ( 
         <Zoom in={true} timeout={800}>
@@ -43,7 +45,9 @@ export default function ImageViewer({url, onClick}) {
                         layout='fill' 
                         objectFit='contain' 
                         sizes="(max-width: 768px) 100vw, (max-width: 1000px) 50vw, 33vw"
-                        alt='IPC'
+                        alt={t.ICP}
+                        placeholder="blur"
+                        blurDataURL = {t.files.image_loading}
                     />
                 </ViewerImage>
             </ViewerScreen>

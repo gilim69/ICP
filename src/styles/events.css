@@ -22,7 +22,7 @@
 
 .event-header {
     display: flex;
-    height: 8vh;
+    height: fit-content;
     width: 100%;
 }
 .event-header-button {
@@ -41,6 +41,7 @@
     border-radius: 6px;
     border: 1px solid;
     font-size: 0.8rem;
+    height: 2.8rem;
     text-align: center;
     padding: 4px 12px;
     margin-left: 0.8rem;
@@ -162,7 +163,17 @@
 }
 .fc-event-title {
     cursor: pointer;
+    font-size: 1.5em;
+    white-space: wrap;
+    text-align: center;
 }
+.fc-list-event {
+    cursor: pointer;
+}
+.fc-daygrid-day-frame {
+    max-height: 5.6em;
+}
+
 .fc-view-harness {
     margin: 0, 10px, 0, 10px;
 }
@@ -174,10 +185,6 @@
     margin: 0%;
   }
 
-  .fc-daygrid-day-events {
-    font-size: 1.5em;
-    white-space: wrap;
-  }
 
 @media screen and (min-width: 768px) {
     .event-imgblock {
@@ -193,5 +200,6 @@
     }
     .fc-event-title {
         white-space: pre-wrap;
+        text-align: center;
     }
 }

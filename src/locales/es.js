@@ -15,10 +15,10 @@ export const es =
         },
     Links: {
         home: 'Hogar',
-        events: 'Evventos',
+        events: 'Eventos',
         gallery: 'Galería',
         contacts: 'Contactos',
-        blog: 'Blog y noticias',
+        blog: 'Blog y Noticias',
         calendar: 'Calendario'
     },
     Home: {
@@ -42,5 +42,8 @@ export const es =
         contacts: 'Contactos',
         phone: 'Teléfono',
         address: 'DIRECCIÓN'
+    },
+    files: {
+        image_loading: '/loading-es.png'
     }
 }

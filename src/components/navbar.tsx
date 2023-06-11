@@ -1,22 +1,35 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import Cookies from 'js-cookie'
+import lang from '../locales/lang'
 //import { useUser } from '@auth0/nextjs-auth0/client'        // version with autintefication
 //import Profile from 'components/profile'                  // version with autintefication
-import lang from '../locales/lang'
 
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined'
-import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
-import PermMediaOutlinedIcon from '@mui/icons-material/PermMediaOutlined';
-import ContactPhoneOutlinedIcon from '@mui/icons-material/ContactPhoneOutlined';
+import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined'
+import PermMediaOutlinedIcon from '@mui/icons-material/PermMediaOutlined'
+import ContactPhoneOutlinedIcon from '@mui/icons-material/ContactPhoneOutlined'
 
 export default function Navbar() { 
-  const [activeList, setActiveList] = useState(false)
+  const [menuList, setMenuList] = useState(false)
+  const [localesList, setLocalesList] = useState(false)
   const router = useRouter()
+  const locale = Cookies.get('locale') ?? 'en'
+
 //  const { user } = useUser()                                 // version with autintefication
 
+  const handleLocaleChange = (locale) => {
+    Cookies.set('locale', locale)
+    router.replace(router.asPath, undefined, { locale })
+    setLocalesList(false)
+  }
+
   const t = lang()
+  useEffect(() => {
+    router.replace(router.asPath, undefined, { locale })
+  }, [locale])
 
   const MENU_LIST = [
     { text: t.Links.home.toUpperCase(), href: '/', icon: <HomeOutlinedIcon /> },
@@ -24,7 +37,6 @@ export default function Navbar() {
     { text: t.Links.gallery.toUpperCase(), href: '/gallery', icon: <PermMediaOutlinedIcon/> },
     { text: t.Links.contacts.toUpperCase(), href: '/contacts',  icon: <ContactPhoneOutlinedIcon/>},
   ]
-  //const localePath = MENU_LIST.some(item => item.href.includes(router.pathname))? router.pathname : '/'
   const localePath = router.pathname.includes('blog')? '/' : 
                     router.pathname.includes('event')? '/calendar' : router.pathname
 
@@ -56,14 +68,14 @@ export default function Navbar() {
       <nav className="nav">
 
         <div className='nav-bar' 
-              onClick = {() => {setActiveList(!activeList)}}>
+              onClick = {() => {setMenuList(!menuList)}}>
           <div key='111'></div>
           <div key='222'></div>
           <div key='333'></div>
         </div>
 
-        <div className={`${activeList ? 'drpdown' : ''} nav-list`}
-              onClick = {() => setActiveList(false)}>
+        <div className={`${menuList ? 'drpdown' : ''} nav-list`}
+              onClick = {() => {setMenuList(false);;setLocalesList(false)}}>
           {MENU_LIST.map((menu) => ( <NavItem key={menu.text} {...menu} />  ))}
 {/*       <div className='nav-item' key='profile'>                // version with autintefication
            <Profile />
@@ -71,12 +83,14 @@ export default function Navbar() {
         </div>
         
         <div className='nav-end'>
-          <div className="dropdown" onClick={() => setActiveList(false)} key='dropdown'>
-            <div className="dropbtn">{router.locale?.toUpperCase()}</div>
-            <div className="dropdown-content">
-              <Link href={localePath} locale="en">English</Link>
-              <Link href={localePath} locale="es">Español</Link>
-              <Link href={localePath} locale="ru">Русский</Link>
+          <div className="locales" onClick={() => setMenuList(false)}>
+            <div className="locales-current" onClick={()=>setLocalesList(!localesList)}>
+              {router.locale?.toUpperCase()}
+            </div>
+            <div className={`${localesList ? 'dropdown' : ''} locales-select`}>
+              <div onClick={() => handleLocaleChange('en')}>English</div>
+              <div onClick={() => handleLocaleChange('es')}>Español</div>
+              <div onClick={() => handleLocaleChange('ru')}>Русский</div>
             </div>
           </div>
 
@@ -93,8 +107,6 @@ export default function Navbar() {
       </nav>
 
     </div>
-    </>
+  </>
   )
 }
-
-

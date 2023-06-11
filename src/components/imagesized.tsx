@@ -1,54 +1,59 @@
 import React from 'react'
 import {useState, useRef, useLayoutEffect } from 'react'
 import Image from 'next/image'
-import ViewImage from '@/components/ImageViewer'
+import styled from 'styled-components';
 
-export default function ImageSized({url, alt = '', byHeight = false}){
+export const ImageDiv = styled.div<{$width, $height, $float}>`
+    position: relative;
+    width: ${props => props.$width || '100%'};
+    height: ${props => props.$height || '50vw'};
+    float: ${props => props.$float || 'none'};
+    background: 'grey';
+    cursor: pointer;
+    overflow: auto;
+    margin: 1rem;
+`
+export default function ImageSized({url, alt = ''}){
     if (!url) {return <div />}
 
-    const imageRef = useRef<HTMLDivElement>(null)
-    const [imageWidth, setImageWidth] = useState(100)
-    const [imageHeight, setImageHeight] = useState(100) 
-    const [viewOpen, setViewOpen] = useState(false)
-    let imageSizeX = 100
-    let imageSizeY = 100
+    const ref = useRef<HTMLDivElement>(null)
+    const [width, setWidth] = useState('')
+    const [height, setHeight] = useState('')
+    const [float, setFloat] = useState('none')
+    const [ratio, setRatio] = useState(1.5)
+
+    const imgRatio = (e) => {
+        const w = e.target.naturalWidth ?? 100
+        const h = e.target.naturalHeight ?? 100
+        setRatio(w/h)
+    }
 
     useLayoutEffect(() => {
-      let w = imageRef?.current?.offsetWidth ?? 150
-      let h = imageRef?.current?.offsetHeight ?? 150
-      h = ~~(imageSizeY*w/imageSizeX)
-      setImageWidth(w)
-      setImageHeight(h)   
-      console.log('wh', w, h, imageWidth, imageHeight)
-    }, [])
-
-    const getImageSize = (img) => {
-      imageSizeX = img.naturalWidth ?? 100
-      imageSizeY = img.naturalHeight ?? 100
-      console.log('imageSize', imageSizeX, imageSizeY)
-    }
-    
-    const setViewState = () => {
-      setViewOpen(false)
-    }
+        const w = ref.current?.offsetWidth ?? 300
+            setWidth(String(~~(w))+'px')
+            setHeight(String(~~(w/ratio))+'px')
+            setFloat('none')            
+    }, [ratio])
 
     return(
       <>
-      {viewOpen && <ViewImage url={url} onClick={setViewState}/> }
-        <div 
-          ref={imageRef} 
-          style={{width: '100%', cursor: 'pointer', position: 'relative'}}
-          onClick={() => setViewOpen(true)}  
+        <ImageDiv 
+          ref={ref} 
+          $width={width}
+          $height={height}
+          $float={float}
         >
           <Image
             src={url}
-            width={imageWidth}
-            height={imageHeight}
-            quality='50'
+            layout='fill' 
+            objectFit='contain' 
+            sizes="(max-width: 768px) 100vw, (max-width: 1000px) 50vw, 33vw"
             alt={alt}
-            onLoadingComplete={(img) => getImageSize(img)} 
+            placeholder="blur"
+            blurDataURL = '/loading.png'
+            onLoad={(img) => imgRatio(img)} 
             />
-        </div>
+        </ImageDiv>
       </>
       )
 }

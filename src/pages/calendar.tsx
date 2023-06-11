@@ -60,16 +60,16 @@ export default function Calendar({eventsData}) {
     const eventData={
       id: info.event.id,
       Images: getImgArray(ev),
-      Name: <BlockHTML blockData={ev.Name}/>,
+      Name: ev.Name.title[0]? <BlockHTML blockData={ev.Name}/> : 'UNDEFINED EVENT!',
       Status: ev.Status.select?.name ?? 'Undefined',
       Date: <BlockHTML blockData={ev.Date}/>,
-      Time: <BlockHTML blockData={ev.Time}/>,
-      Location: <BlockHTML blockData={ev.Location}/>,
-      Description: <BlockHTML blockData={ev.Description}/>,
-      Contacts: <BlockHTML blockData={ev.Contacts}/>,
-      Price: <BlockHTML blockData={ev.Price}/>,
+      Time: ev.Time.rich_text[0]? <BlockHTML blockData={ev.Time}/>: null,
+      Location: ev.Location.rich_text[0]? <BlockHTML blockData={ev.Location}/>: null,
+      Description: ev.Description.rich_text[0]? <BlockHTML blockData={ev.Description}/>: null,
+      Contacts: ev.Contacts.rich_text[0]? <BlockHTML blockData={ev.Contacts}/>: null,
+      Price: ev.Price.rich_text[0]? <BlockHTML blockData={ev.Price}/>: null,
       Map: getMapUrl(ev.Map.url),
-      ImgUrl: ev.Images.files[0]?.file?.url
+      ImgUrl: ev.Images.files[0].file?.url
     }
     setEventProps(eventData)
     setViewEvent(true)
@@ -93,6 +93,8 @@ export default function Calendar({eventsData}) {
           handleWindowResize
           stickyHeaderDates
           locale={t.locale}
+          eventTextColor='black'
+          firstDay={t.locale!=='en'? 1 : 0}
           eventClick = {eventClick}
           headerToolbar={
             {left: 'prev,next',

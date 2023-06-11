@@ -2,7 +2,7 @@
 .first-title {
   text-align: center;
   margin: 10% auto 280px auto;
-  font-size: 8vh;
+  font-size: 10vh;
   word-wrap: break-word;
   text-shadow:grey 1px 3px 3px;
   background: none;
@@ -14,24 +14,35 @@
   color: darkred;
   margin-top: 10vh;
 }
-
-@media screen and (max-width: 480px) {  
+@media screen and (max-width: 728px) {  
+  .first-title{
+    font-size: 8vh;
+    letter-spacing: 8px;
+  }
+}
+@media screen and (max-width: 600px) {  
+  .first-title{
+    font-size: 8vh;
+    letter-spacing: 6px;
+  }
+}
+@media screen and (max-width: 560px) {  
   .first-title{
     font-size: 6vh;
     letter-spacing: 6px;
   }
 }
 
-@media screen and (max-width: 369px) {  
+@media screen and (max-width: 436px) {  
   .first-title{
-    font-size: 4vh;
+    font-size: 5vh;
     letter-spacing: 4px;
   }
 }
 
-@media screen and (max-width: 300px) {  
+@media screen and (max-width: 348px) {  
   .first-title{
-    font-size: 3vh;
+    font-size: 4vh;
     letter-spacing: 3px;
   }
 }

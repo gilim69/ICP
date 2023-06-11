@@ -43,5 +43,8 @@ export const ru =
         contacts: 'Контакты',
         phone: 'Телефон',
         address: 'Адрес'
+    },
+    files: {
+        image_loading: '/loading-ru.png'
     }
 }

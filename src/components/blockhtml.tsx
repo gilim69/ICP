@@ -13,14 +13,13 @@ export function getStyle(a) {
 }
 
 export default function BlockHTML({blockData}) {
+  console.log('blockData', blockData)
   const bType = blockData?.type ?? 'no_type'
   let b = blockData
   if (!b) {return <div>'Error! Undefined block'</div>}
   while (b.type) {    // (b.type && !(b.rich_text||b.title) - more strong variant
     b = b[b.type]
   }
- // console.log('Block: ', bType,  b)
-
 
   if (b.start) {return <div className='block-paragraph'> {b.start} </div>} //date type
 
@@ -35,7 +34,7 @@ export default function BlockHTML({blockData}) {
   }
 
   b = b.rich_text||b.title||b
-  if (!b.length) {return <br/>} // no text in block
+  if (!b.length) {return null} // no text in block
 
   if (!b) {return <div>'Error! No rich_text or title property'</div>}
   return (
