@@ -95,7 +95,7 @@ a {
 .nav-item-div {
   color: inherit;
   display:inline-block;
-  height: fit-content;
+  height: auto;
   margin: auto 0;
   border: inherit;
 }
@@ -150,9 +150,7 @@ a {
   .nav-list{
     position: unset;
     flex-direction: row;
-    min-height: fit-content;
     max-height: 68px;
-    width: fit-content;
     column-gap: 24px;
     align-items: left;
     border-left: 0px;

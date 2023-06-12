@@ -22,7 +22,6 @@
 
 .event-header {
     display: flex;
-    height: fit-content;
     width: 100%;
 }
 .event-header-button {

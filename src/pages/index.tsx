@@ -6,9 +6,6 @@ import BlockHTML from '@components/BlockHTML'
 import PostCard from '@components/PostCard'
 import lang from '../locales/lang'
 
-import { aX } from '@fullcalendar/core/internal-common'
-
-
 export default function Home({allData}) {
   const t = lang()
   //console.log('Home props ', allData)
@@ -20,7 +17,7 @@ export default function Home({allData}) {
       return {
         id: e.id,
         cover: e.cover? e.cover[e.cover.type]?.url : null,
-        icon: e.icon? e.icon.emoji || <img src={e.icon.external?.url} height='30'/> : null,
+        icon: e.icon? e.icon.emoji || <img src={e.icon.external?.url} alt='icon' height='30'/> : null,
         title: e.properties.Title.title[0]? e.properties.Title.title[0].plain_text : 'UNDEFINED TITLE OF POST!',
         description: <BlockHTML blockData={e.properties.Description}/>,
         link: !e.properties.NoMoreInfo.checkbox

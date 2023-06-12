@@ -50,7 +50,7 @@ export default function AlertDialogSlide() {
         </DialogContent>
         <DialogActions>
             <Link href='https://chat.whatsapp.com/G1xRRP5Qy6R5ps0LpkjGCt'>
-            <Button variant="text" startIcon={<img src='/whatsapp-50.png' width='21' />}>Join</Button>
+            <Button variant="text" startIcon={<img src='/whatsapp-50.png' alt='WA icon' width='21' />}>Join</Button>
             </Link>
             <Button onClick={handleClose}>Later</Button>
             <Button onClick={handleClose}>Don't show this again</Button>

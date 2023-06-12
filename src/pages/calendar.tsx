@@ -6,22 +6,30 @@ import FullCalendar from '@fullcalendar/react' // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 import interactionPlugin from "@fullcalendar/interaction"
 import listPlugin from '@fullcalendar/list'
+import Cookies from 'js-cookie'
 import lang from '../locales/lang'
 import Event from '@components/Event'
 import BlockHTML from '@components/BlockHTML'
 
 
 export default function Calendar({eventsData}) {
-  let view = 'dayGridMonth'
+ //let view = 'dayGridMonth'
+  let calendarView = Cookies.get('calendarView') ?? 'dayGridMonth'
+  'dayGridMonth listMonth listWeek'.includes(calendarView)? null : calendarView = 'dayGridMonth' 
+
   const [eventProps, setEventProps] = React.useState({})
   const [viewEvent, setViewEvent] = React.useState(false)
+  const router = useRouter()
 
   const t = lang()
   const localeData = eventsData.filter((e)=>
   e.properties.Language.multi_select.some(item => item.name.includes(t.locale))
 )
-  const router = useRouter()
-  
+  const handleViewChange = (calendarView) => {
+    Cookies.set('calendarView', calendarView)
+    console.log('View changed', calendarView)
+  }
+
   const setEvent = (e) => {
     const ret = {
       id: e.id,
@@ -69,7 +77,7 @@ export default function Calendar({eventsData}) {
       Contacts: ev.Contacts.rich_text[0]? <BlockHTML blockData={ev.Contacts}/>: null,
       Price: ev.Price.rich_text[0]? <BlockHTML blockData={ev.Price}/>: null,
       Map: getMapUrl(ev.Map.url),
-      ImgUrl: ev.Images.files[0].file?.url
+    //  ImgUrl: ev.Images.files[0].file?.url
     }
     setEventProps(eventData)
     setViewEvent(true)
@@ -81,7 +89,7 @@ export default function Calendar({eventsData}) {
       <div className='event-calendar'>
         <FullCalendar 
           plugins={[ dayGridPlugin, listPlugin, interactionPlugin]}    
-          initialView={view}
+          initialView={calendarView}
           weekends
           displayEventTime={false}
           events={events}
@@ -96,6 +104,7 @@ export default function Calendar({eventsData}) {
           eventTextColor='black'
           firstDay={t.locale!=='en'? 1 : 0}
           eventClick = {eventClick}
+          viewDidMount={(info)=>handleViewChange(info.view.type)}
           headerToolbar={
             {left: 'prev,next',
             center: 'title',

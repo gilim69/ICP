@@ -13,7 +13,7 @@ export function getStyle(a) {
 }
 
 export default function BlockHTML({blockData}) {
-  console.log('blockData', blockData)
+ // console.log('blockData', blockData)
   const bType = blockData?.type ?? 'no_type'
   let b = blockData
   if (!b) {return <div>'Error! Undefined block'</div>}

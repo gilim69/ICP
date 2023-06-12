@@ -19,14 +19,17 @@ export default function Navbar() {
   const locale = Cookies.get('locale') ?? 'en'
 
 //  const { user } = useUser()                                 // version with autintefication
+  
+  const t = lang()
 
   const handleLocaleChange = (locale) => {
-    Cookies.set('locale', locale)
-    router.replace(router.asPath, undefined, { locale })
+    if (t.locale!==locale) {
+      Cookies.set('locale', locale)
+      router.replace(router.asPath, undefined, { locale })
+    }
     setLocalesList(false)
   }
 
-  const t = lang()
   useEffect(() => {
     router.replace(router.asPath, undefined, { locale })
   }, [locale])

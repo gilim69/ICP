@@ -1,68 +1,28 @@
-import PageHTML from '@components/PageHTML'
-//import LoginIcon from '@mui/icons-material/Login'  //version with auth
-import { useEffect } from 'react'
-const { Client } = require('@notionhq/client')
-import lang from '../locales/lang'
+import * as React from 'react'
+import { NotionAPI } from 'notion-client'
+import NotionPage from '@components/NotionPage'
 
-import Card from '@mui/material/Card'
-import CardContent from '@mui/material/CardContent'
-import CardMedia from '@mui/material/CardMedia'
+export default function Contacts({pageData}) {
+//  console.log('PG', pageData)
 
-export default function Contacts(props) {
-  const t = lang()
-  useEffect(()=>{
-      console.log('Contacts:', props)
-    })
-    const e = props.pageHead
-    const headInf = {
-      cover: e.cover? e.cover[e.cover.type]?.url : null,
-      icon: e.icon? e.icon.emoji || <img src={e.icon.external?.url} height='30'/> : null,
-      title: t.Contacts.contacts
-    }
-console.log('head ', headInf.title)
     return (
       <div className='post-list-item'>
-      <Card sx={{ maxWidth: 680, background: 'goldenrod' }}>
-        {headInf.cover?
-          <CardMedia
-            sx={{ height: 210 }}
-            image={headInf.cover}
-            title={headInf.title}
-          />
-        : ''}
-        <CardContent>
-          <h1 style={{color: 'black', marginBottom: '1rem'}}>
-            {headInf.icon}
-            {headInf.title}
-          </h1>
-
-          <div style={{color: 'black'}}>
-            <PageHTML pageContent={props.pageChildren}/>
-          </div>
-
-        </CardContent>
-      </Card>
+              <NotionPage pageData={pageData} fullPage={true}/>
       </div>
-    )
+        )
 }
 
 export async function getServerSideProps({locale}) {
-  let pageId = locale==='es'? '865209aad6574775a5aa0836de25a493' :
-    locale==='ru'? '688e4b7017e14fb695662963cc2bdde1' : '04246023eca9412a9c9a3e6dc53c0190'
- 
-  const notion = new Client({ auth: process.env.NOTION_KEY })
-  const responseHead = await notion.pages.retrieve({ page_id: pageId })
-  const responseChildren = await notion.blocks.children.list({
-    block_id: pageId,
-    page_size: 50,
-  })
+    let pageId = locale==='es'? '865209aad6574775a5aa0836de25a493' :
+      locale==='ru'? '688e4b7017e14fb695662963cc2bdde1' : '04246023eca9412a9c9a3e6dc53c0190'
+  
+    const notion = new NotionAPI()
+    const pageData = await notion.getPage(pageId)
 
-  return {
-    props: {
-      pageHead: responseHead,
-      pageChildren: responseChildren.results,
-      pageID: pageId
+    return {
+      props: {
+        pageData: pageData,
+      }
     }
   }
-}
-
+  
